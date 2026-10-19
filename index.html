@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUBEEN M. — Game Developer &amp; Technical Artist</title>
+  <meta name="description" content="Portfolio of Mubeen M. — Game Developer &amp; Technical Artist specializing in Unity, C#, physics-driven mechanics, and real-time shaders.">
+
+  <!-- Typography: Inter for Display/Body & JetBrains Mono for Technical Monospace -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Cinematic Opening Transition Curtain -->
+  <div class="intro-curtain" id="introCurtain" aria-hidden="true">
+    <div class="intro-loader">
+      <div class="intro-brand">
+        <span class="intro-name">MUBEEN M<span class="dot-accent">.</span></span>
+        <span class="intro-tag">GAME DEV // TECH ART</span>
+      </div>
+      <div class="intro-progress-bar">
+        <div class="intro-progress-fill"></div>
+      </div>
+      <div class="intro-status">
+        <span class="intro-pulse"></span>
+        <span class="intro-status-text">INITIALIZING SYSTEMS</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Electric Lime Laser Line -->
+  <div class="boot-laser-line" id="bootLaserLine" aria-hidden="true"></div>
+
+  <!-- Ambient background glow & subtle vignette -->
+  <div class="ambient-bg" aria-hidden="true"></div>
+
+  <!-- Custom interactive mouse cursor -->
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- Main Viewport Shell -->
+  <div class="app-layout">
+
+    <!-- Top Header Bar with Quick Contacts (Left) and Résumé (Right) -->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="header-contacts">
+          <a href="mailto:mubeenm2005@gmail.com" class="header-contact-link" title="Email: mubeenm2005@gmail.com" aria-label="Email: mubeenm2005@gmail.com">
+            <svg class="header-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span class="header-contact-text">EMAIL</span>
+          </a>
+          <a href="https://www.linkedin.com/in/mubeen-m-031a0032b/" target="_blank" rel="noopener" class="header-contact-link" title="LinkedIn: Mubeen M" aria-label="LinkedIn: Mubeen M">
+            <svg class="header-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            <span class="header-contact-text">LINKEDIN</span>
+          </a>
+          <a href="tel:+919846554645" class="header-contact-link" title="Phone: +91 9846554645" aria-label="Phone: +91 9846554645">
+            <svg class="header-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            <span class="header-contact-text">PHONE</span>
+          </a>
+          <a href="https://github.com/mubiii2" target="_blank" rel="noopener" class="header-contact-link" title="GitHub: mubiii2" aria-label="GitHub: mubiii2">
+            <svg class="header-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            <span class="header-contact-text">GITHUB</span>
+          </a>
+        </div>
+        <a href="resume.pdf" target="_blank" rel="noopener" class="header-link">
+          <span>RÉSUMÉ</span>
+          <span class="arrow-up" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Central Hero Hub -->
+    <main class="hub-container">
+      <div class="hub-content">
+
+        <!-- Title & Subtitle block -->
+        <div class="hub-header">
+          <h1 class="hub-title">MUBEEN M<span class="dot-accent">.</span></h1>
+          <p class="hub-role">GAME DEVELOPER / TECHNICAL ARTIST</p>
+        </div>
+
+        <!-- 4 Interactive Portal Cards with the iconic neon green / lime accents & pill badges -->
+        <nav class="hub-nav" aria-label="Portfolio Hub Navigation">
+          <button type="button" class="hub-btn" data-panel="work">
+            <span class="btn-text">WORK &amp; GAMES</span>
+            <span class="btn-pill">4 PROJECTS</span>
+          </button>
+
+          <button type="button" class="hub-btn" data-panel="techart">
+            <span class="btn-text">TECH ART &amp; TOOLS</span>
+            <span class="btn-pill">SHADERS / TELEMETRY</span>
+          </button>
+
+          <button type="button" class="hub-btn" data-panel="about">
+            <span class="btn-text">ABOUT</span>
+            <span class="btn-pill">ICAT &bull; SKILLS</span>
+          </button>
+
+          <button type="button" class="hub-btn" data-panel="contact">
+            <span class="btn-text">CONTACT</span>
+            <span class="btn-pill">GET IN TOUCH</span>
+          </button>
+        </nav>
+
+        <!-- Unified Interactive Visual: Spring Physics Wave Canvas -->
+        <div class="hub-visual-container" id="hubVisualContainer">
+          <canvas id="interactiveWaveCanvas" class="interactive-wave-canvas" title="Interactive Physics Wave (Pluck or hover to ripple)"></canvas>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Bottom Footer -->
+    <footer class="site-footer">
+      <span>MUBEEN M.</span>
+      <span class="footer-hint">CLICK ANY SECTION TO EXPLORE</span>
+    </footer>
+
+  </div><!-- /app-layout -->
+
+
+  <!-- =========================================================================
+       MODAL OVERLAYS (Clean, focused cards)
+       ========================================================================= -->
+  <div class="panel-backdrop" id="panelBackdrop" aria-hidden="true"></div>
+
+  <div class="panel-stage">
+
+    <!-- 01: WORK / GAMES -->
+    <article class="modal-card" id="panel-work" role="dialog" aria-labelledby="work-title" aria-modal="true" hidden>
+      <header class="card-header">
+        <div class="card-meta">
+          <span class="card-idx">01</span>
+          <span class="card-category">GAME DEVELOPMENT</span>
+        </div>
+        <button type="button" class="card-close" data-close aria-label="Close Work Panel">&times;</button>
+      </header>
+
+      <div class="card-body">
+        <h2 id="work-title" class="card-title">SELECTED GAMES &amp; SYSTEMS</h2>
+        <p class="card-lead">
+          Production-grade gameplay engineering, networked multiplayer combat, and creative mechanic prototypes built in Unity.
+        </p>
+
+        <div class="projects-stack">
+
+          <!-- PROJECT 1: CAMPUS 99 -->
+          <div class="project-entry">
+            <div class="entry-header">
+              <span class="entry-badge">NETCODE MULTIPLAYER</span>
+              <span class="entry-year">2026</span>
+            </div>
+            <h3 class="entry-title">CAMPUS 99 — 4V4 RETRO MULTIPLAYER FPS</h3>
+            <p class="entry-sub">Unity 6 &bull; Netcode for GameObjects &bull; Unity Relay &bull; URP</p>
+            
+            <div class="media-container">
+              <video class="project-video" autoplay loop muted playsinline poster="assets/images/campus99-preview.jpg" aria-label="Campus 99 gameplay video">
+                <source src="assets/videos/campus99-gameplay.mp4" type="video/mp4">
+              </video>
+              <div class="media-fallback">
+                <span class="fallback-tag">MULTIPLAYER FPS GAMEPLAY PREVIEW</span>
+              </div>
+            </div>
+
+            <div class="entry-details">
+              <p>
+                Architected and programmed a high-octane 4v4 retro-stylized first-person shooter from ground up. 
+                Features responsive server-authoritative networked weapon recoil, client-side movement prediction, and zero-port-forwarding multiplayer lobby matching using Unity Relay &amp; Lobby services.
+              </p>
+              <div class="entry-links">
+                <a href="https://github.com/mubiii2/campus99" target="_blank" rel="noopener" class="link-btn">
+                  <span>VIEW REPOSITORY</span>
+                  <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 2: BOINGRUSH -->
+          <div class="project-entry">
+            <div class="entry-header">
+              <span class="entry-badge">PHYSICS PLATFORMER</span>
+              <span class="entry-year">2025</span>
+            </div>
+            <h3 class="entry-title">BOINGRUSH — SLINGSHOT PLATFORMING CONCEPT</h3>
+            <p class="entry-sub">Spring-Based Physics &bull; Drag-and-Release Trajectory &bull; Risk-Reward Levels</p>
+            <div class="entry-details">
+              <p>
+                A physics-based platforming concept built around tactile spring-like movement and slingshot momentum mechanics. Players aim drag-and-release impulses to traverse treacherous vertical levels with risk-and-reward trajectory timing and competitive multiplayer potential.
+              </p>
+            </div>
+          </div>
+
+          <!-- PROJECT 3: GLUED -->
+          <div class="project-entry">
+            <div class="entry-header">
+              <span class="entry-badge">ENVIRONMENTAL PUZZLER</span>
+              <span class="entry-year">2025</span>
+            </div>
+            <h3 class="entry-title">GLUED — FIRST-PERSON COLLAPSE PUZZLER</h3>
+            <p class="entry-sub">Object Attachment Physics &bull; Vertical Traversal &bull; Creative Problem Solving</p>
+            <div class="entry-details">
+              <p>
+                A first-person atmospheric concept set in a collapsing fantasy world. Uses an adhesive gun mechanic to bind loose physical objects together in real time, constructing improvised platforms and ladders to ascend toward the moon.
+              </p>
+            </div>
+          </div>
+
+          <!-- PROJECT 3: THE LAST EXPERIMENT -->
+          <div class="project-entry">
+            <div class="entry-header">
+              <span class="entry-badge">HORROR ATMOSPHERIC</span>
+              <span class="entry-year">2025</span>
+            </div>
+            <h3 class="entry-title">THE LAST EXPERIMENT</h3>
+            <p class="entry-sub">First-Person Psychological Horror &bull; State Machine AI &bull; Audio Cues</p>
+            <div class="entry-details">
+              <p>
+                A first-person atmospheric psychological horror game exploring tension, acoustic spatialization, and claustrophobic pacing. 
+                Engineered an intelligent patrolling enemy entity driven by finite state machines with hearing sensitivity and line-of-sight Raycasts.
+              </p>
+            </div>
+          </div>
+
+          <!-- PROJECT 4: REVERSE IT -->
+          <div class="project-entry">
+            <div class="entry-header">
+              <span class="entry-badge">COLLEGE GAME JAM &bull; WINNER (1ST PLACE)</span>
+              <span class="entry-year">2024</span>
+            </div>
+            <h3 class="entry-title">REVERSE IT — MECHANIC-DRIVEN PUZZLER</h3>
+            <p class="entry-sub">Mechanics Inversion &bull; Rapid Prototyping &bull; Level-Based Progression</p>
+            <div class="entry-details">
+              <p>
+                Awarded 1st place in a competitive college game jam. Developed around level-specific mechanics and gameplay challenges, dynamically inverting gravity vectors and controls to force players into rapid, spatial problem-solving.
+              </p>
+            </div>
+          </div>
+
+          <!-- PROJECT 5: MASKOUT -->
+          <div class="project-entry">
+            <div class="entry-header">
+              <span class="entry-badge">GLOBAL GAME JAM</span>
+              <span class="entry-year">2024</span>
+            </div>
+            <h3 class="entry-title">MASKOUT — COLLABORATIVE GAME JAM PROJECT</h3>
+            <p class="entry-sub">Unity &bull; Rapid Prototyping &bull; Theme Exploration &bull; Playable on itch.io</p>
+            <div class="entry-details">
+              <p>
+                A collaborative Global Game Jam project developed around the theme of masks. Explores creative gameplay loops, dynamic interaction states, and rapid prototype iteration under strict hackathon timeframes.
+              </p>
+              <div class="entry-links">
+                <a href="https://zaki-092.itch.io/maskout" target="_blank" rel="noopener" class="link-btn">
+                  <span>PLAY MASKOUT ON ITCH.IO</span>
+                  <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- 02: TECH ART & TOOLS -->
+    <article class="modal-card" id="panel-techart" role="dialog" aria-labelledby="techart-title" aria-modal="true" hidden>
+      <header class="card-header">
+        <div class="card-meta">
+          <span class="card-idx">02</span>
+          <span class="card-category">TECHNICAL ART &amp; TOOLS</span>
+        </div>
+        <button type="button" class="card-close" data-close aria-label="Close Tech Art Panel">&times;</button>
+      </header>
+
+      <div class="card-body">
+        <h2 id="techart-title" class="card-title">SHADERS, VFX &amp; PIPELINES</h2>
+        <p class="card-lead">
+          Real-time graphics optimization, custom shader programming, and studio production tools.
+        </p>
+
+        <div class="projects-stack">
+
+          <!-- TOOL 1: URP DISSOLVE SHADER -->
+          <div class="project-entry">
+            <div class="entry-header">
+              <span class="entry-badge">URP SHADER GRAPH / HLSL</span>
+              <span class="entry-year">2026</span>
+            </div>
+            <h3 class="entry-title">CUSTOM URP DISSOLVE SHADER &amp; VFX</h3>
+            <p class="entry-sub">Triplanar Projection &bull; 3D Noise Sampling &bull; HDR Emission Edge</p>
+
+            <div class="media-container">
+              <video class="project-video" autoplay loop muted playsinline poster="assets/images/dissolve-preview.jpg" aria-label="Dissolve shader preview video">
+                <source src="assets/videos/dissolve-shader.mp4" type="video/mp4">
+              </video>
+              <div class="media-fallback">
+                <span class="fallback-tag">PROCEDURAL SHADER DEMO</span>
+              </div>
+            </div>
+
+            <div class="entry-details">
+              <p>
+                Built a production-ready procedural dissolve shader for Unity Universal Render Pipeline (URP). 
+                Eliminates UV seams using 3D Perlin/Simplex noise coordinate generation, dual-threshold clipping, and dynamic HDR edge bloom integration.
+              </p>
+            </div>
+          </div>
+
+          <!-- TOOL 2: LILA PLAYER JOURNEY VISUALIZATION TOOL -->
+          <div class="project-entry">
+            <div class="entry-header">
+              <span class="entry-badge">DATA VISUALIZATION &bull; FULL-STACK TOOL</span>
+              <span class="entry-year">2025</span>
+            </div>
+            <h3 class="entry-title">LILA PLAYER JOURNEY VISUALIZATION TOOL</h3>
+            <p class="entry-sub">Python &bull; pandas &bull; FastAPI Backend &bull; React + Vite Frontend</p>
+            <div class="entry-details">
+              <p>
+                An interactive data visualization application built to analyze player behavior, game event data, and playtest paths. Processes structured gameplay datasets using Python &amp; pandas, powered by a high-performance FastAPI REST backend and a responsive React/Vite interface for tracking player matches and journey choke-points.
+              </p>
+              <div class="entry-links">
+                <a href="https://github.com/mubiii2/lila-player-tool/tree/master" target="_blank" rel="noopener" class="link-btn">
+                  <span>VIEW ON GITHUB</span>
+                  <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+  </div><!-- /panel-stage -->
+
+  <!-- =========================================================================
+       DEDICATED FULL SCREEN CONTACT VIEW (Clean full-page transition)
+       ========================================================================= -->
+  <section class="contact-screen-view" id="contactScreenView" aria-label="Contact Section" hidden>
+    
+    <!-- Top Bar with Back Navigation -->
+    <div class="screen-topbar">
+      <button type="button" class="screen-back-btn" id="contactBackBtn" aria-label="Back to Hub">
+        <svg class="back-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span class="back-text">BACK TO HUB</span>
+      </button>
+
+      <div class="screen-meta-badge">
+        <span class="status-indicator"></span>
+        <span>OPEN FOR CONTRACT / FULL-TIME</span>
+      </div>
+    </div>
+
+    <!-- Centered Dedicated Screen Content -->
+    <div class="screen-content-wrapper">
+      <div class="screen-contact-panel">
+
+        <div class="contact-top-header">
+          <div class="contact-title-group">
+            <h1 id="contact-title" class="contact-title-text">C O N T A C T</h1>
+            <div class="contact-title-line" aria-hidden="true"></div>
+          </div>
+          <p class="contact-subtitle">Let's discuss game architecture, shader engineering, or team opportunities.</p>
+        </div>
+
+        <form class="contact-form" id="contactForm" autocomplete="off">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactName" class="form-label">NAME</label>
+              <input type="text" id="contactName" name="name" class="form-input" placeholder="Your name or studio..." required>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail" class="form-label">EMAIL</label>
+              <input type="email" id="contactEmail" name="email" class="form-input" placeholder="name@domain.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contactMessage" class="form-label">MESSAGE</label>
+            <textarea id="contactMessage" name="message" class="form-textarea" rows="6" placeholder="Share your project requirements, opportunity, or say hello..." required></textarea>
+          </div>
+
+          <div class="form-actions-row">
+            <div class="form-buttons">
+              <button type="submit" class="contact-btn-submit" id="contactSubmitBtn">SEND MESSAGE</button>
+              <button type="reset" class="contact-btn-reset" id="contactResetBtn">RESET</button>
+            </div>
+            <div class="form-status" id="formStatus" aria-live="polite"></div>
+          </div>
+        </form>
+
+        <div class="contact-quick-connect">
+          <div class="quick-icons-row">
+            <a href="tel:+919846554645" class="quick-icon-btn" title="Phone: +91 9846554645" aria-label="Call +91 9846554645">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            </a>
+
+            <a href="mailto:mubeenm2005@gmail.com" class="quick-icon-btn" title="Email: mubeenm2005@gmail.com" aria-label="Send email to mubeenm2005@gmail.com">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </a>
+
+            <a href="https://www.linkedin.com/in/mubeen-m-031a0032b/" target="_blank" rel="noopener" class="quick-icon-btn" title="LinkedIn: Mubeen M" aria-label="Visit LinkedIn Profile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+
+            <a href="https://github.com/mubiii2" target="_blank" rel="noopener" class="quick-icon-btn" title="GitHub: mubiii2" aria-label="Visit GitHub Profile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+
+            <a href="resume.pdf" target="_blank" rel="noopener" class="quick-icon-btn" title="Download Official Résumé PDF" aria-label="Download Official Résumé PDF">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       DEDICATED FULL SCREEN ABOUT VIEW (Clean full-page transition, spacious layout)
+       ========================================================================= -->
+  <section class="screen-view about-screen-view" id="aboutScreenView" aria-label="About Section" hidden>
+
+    <!-- Top Bar with Back Navigation -->
+    <div class="screen-topbar">
+      <button type="button" class="screen-back-btn" id="aboutBackBtn" aria-label="Back to Hub">
+        <svg class="back-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span class="back-text">BACK TO HUB</span>
+      </button>
+
+      <div class="screen-meta-badge">
+        <span class="status-indicator"></span>
+        <span>BACKGROUND // CREDENTIALS // SKILLS</span>
+      </div>
+    </div>
+
+    <!-- Spacious Scrollable Screen Content Container -->
+    <div class="screen-content-wrapper about-content-wrapper">
+      <div class="screen-about-panel">
+
+        <!-- Top Title Header matching Contact style -->
+        <div class="about-top-header">
+          <div class="contact-title-group">
+            <h1 id="about-screen-title" class="contact-title-text">A B O U T</h1>
+            <div class="contact-title-line" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <!-- Editorial Storytelling Flow (Not a generic 2-column stack) -->
+        <div class="about-flow">
+
+          <!-- 01: WARM WELCOME & PERSONAL INTRODUCTION -->
+          <section class="about-flow-section hero-narrative-card">
+            <div class="section-tag-line">
+              <span class="sec-num">01</span>
+              <span class="sec-label">WELCOME &amp; INTRODUCTION</span>
+            </div>
+            <div class="narrative-content">
+              <div class="welcome-badge">
+                <span class="welcome-wave">👋</span>
+                <span class="welcome-text">HELLO &amp; WELCOME TO MY PORTFOLIO</span>
+              </div>
+              <h2 class="narrative-headline">
+                I'm Mubeen M. &mdash; Game Developer &amp; Technical Artist
+              </h2>
+              <div class="narrative-body">
+                <p>
+                  Thank you for visiting! I'm <strong>Mubeen M.</strong>, a passionate game developer specializing in gameplay programming, technical art, and real-time interactive systems. I love transforming creative concepts into engaging, playable experiences by combining programming logic, game mechanics, visual flair, and technical problem-solving.
+                </p>
+                <p>
+                  My day-to-day work primarily revolves around <strong>Unity and C#</strong>, where I design and build gameplay mechanics, multiplayer networking systems, procedural shaders, visual effects, and custom workflow tools that improve development pipelines.
+                </p>
+                <p>
+                  I'm driven by the intersection where code meets art &mdash; exploring how technical solutions elevate both the mechanical feel and visual fidelity of a game. I thrive on hands-on prototyping, game jams, and continuous learning, always striving to deliver polished, performant games.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 02: PROFESSIONAL FOCUS AREAS (Industry-Standard Capability Grid) -->
+          <section class="about-flow-section">
+            <div class="section-tag-line">
+              <span class="sec-num">02</span>
+              <span class="sec-label">CORE DISCIPLINES &amp; EXPERTISE</span>
+            </div>
+            <div class="focus-grid-modern">
+              
+              <!-- Discipline 1 -->
+              <div class="focus-card-item">
+                <div class="f-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <div class="f-title">Gameplay Engineering</div>
+                <div class="f-desc">Architecting robust gameplay loops, character controllers, state machines, and responsive player interactions in C#.</div>
+              </div>
+
+              <!-- Discipline 2 -->
+              <div class="focus-card-item">
+                <div class="f-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </div>
+                <div class="f-title">Technical Art &amp; Shaders</div>
+                <div class="f-desc">Developing custom HLSL shaders, Shader Graph materials, procedural surface effects, and post-processing pipelines in URP.</div>
+              </div>
+
+              <!-- Discipline 3 -->
+              <div class="focus-card-item">
+                <div class="f-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                </div>
+                <div class="f-title">Multiplayer Systems</div>
+                <div class="f-desc">Designing networked multiplayer game architecture, client-server replication, lobby matchmaking, and session relays.</div>
+              </div>
+
+              <!-- Discipline 4 -->
+              <div class="focus-card-item">
+                <div class="f-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                </div>
+                <div class="f-title">Physics &amp; Dynamics</div>
+                <div class="f-desc">Crafting physics-driven mechanics, momentum-based platforming systems, and interactive environmental objects.</div>
+              </div>
+
+              <!-- Discipline 5 -->
+              <div class="focus-card-item">
+                <div class="f-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                </div>
+                <div class="f-title">Rapid Prototyping</div>
+                <div class="f-desc">Iterating rapidly from initial concept to high-polish playable mechanics, validated through competitive game jams.</div>
+              </div>
+
+              <!-- Discipline 6 -->
+              <div class="focus-card-item">
+                <div class="f-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                </div>
+                <div class="f-title">Development Tools &amp; Telemetry</div>
+                <div class="f-desc">Building custom in-editor tools, automated data pipelines, and analytics visualizers to optimize studio workflows.</div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- 03: TECHNICAL SKILLS & SOFTWARE TOOLKIT (Clearly Categorized) -->
+          <section class="about-flow-section">
+            <div class="section-tag-line">
+              <span class="sec-num">03</span>
+              <span class="sec-label">TECHNICAL SKILLS &amp; SOFTWARES</span>
+            </div>
+            
+            <div class="skills-spectrum-box">
+              
+              <!-- 01: PROGRAMMING & SHADING LANGUAGES -->
+              <div class="spectrum-row">
+                <div class="spectrum-header">
+                  <span class="spec-cat-num">A.</span>
+                  <div class="spec-cat-meta">
+                    <span class="spec-cat-name">PROGRAMMING &amp; SHADING</span>
+                    <span class="spec-cat-sub">Engine Logic &amp; Shader Pipelines</span>
+                  </div>
+                </div>
+                <div class="spectrum-chips">
+                  <span class="s-chip highlight"><strong class="chip-key">C#</strong> &mdash; Systems Architecture, OOP &amp; Gameplay Logic</span>
+                  <span class="s-chip highlight"><strong class="chip-key">HLSL</strong> &mdash; Custom Surface &amp; Vertex/Fragment Shaders</span>
+                  <span class="s-chip"><strong class="chip-key">Python</strong> &mdash; Tool Automation, Data Processing &amp; Telemetry</span>
+                  <span class="s-chip"><strong class="chip-key">C++</strong> &mdash; Data Structures, Memory &amp; Systems Fundamentals</span>
+                  <span class="s-chip"><strong class="chip-key">JavaScript / Web</strong> &mdash; Interactive Tools, DOM &amp; REST APIs</span>
+                  <span class="s-chip"><strong class="chip-key">HTML5 / CSS3</strong> &mdash; Responsive Tool UI &amp; Web Layouts</span>
+                </div>
+              </div>
+
+              <!-- 02: GAMEPLAY & SYSTEMS ENGINEERING -->
+              <div class="spectrum-row">
+                <div class="spectrum-header">
+                  <span class="spec-cat-num">B.</span>
+                  <div class="spec-cat-meta">
+                    <span class="spec-cat-name">GAMEPLAY &amp; SYSTEMS</span>
+                    <span class="spec-cat-sub">Mechanics, Networking &amp; Architecture</span>
+                  </div>
+                </div>
+                <div class="spectrum-chips">
+                  <span class="s-chip highlight">Gameplay Architecture &amp; State Machines</span>
+                  <span class="s-chip highlight">Multiplayer Synchronization (Netcode for GameObjects)</span>
+                  <span class="s-chip">Unity Relay, Lobby &amp; Matchmaking Services</span>
+                  <span class="s-chip">Client-Server &amp; Host-Client Networking Models</span>
+                  <span class="s-chip">Physics-Driven Interactions &amp; Rigidbody Dynamics</span>
+                  <span class="s-chip">ScriptableObject-Driven Modular Architecture</span>
+                  <span class="s-chip">Procedural Generation &amp; Deterministic Algorithms</span>
+                  <span class="s-chip">Rapid Mechanics Prototyping &amp; Iteration</span>
+                </div>
+              </div>
+
+              <!-- 03: TECHNICAL ART & REAL-TIME RENDERING -->
+              <div class="spectrum-row">
+                <div class="spectrum-header">
+                  <span class="spec-cat-num">C.</span>
+                  <div class="spec-cat-meta">
+                    <span class="spec-cat-name">TECHNICAL ART &amp; RENDERING</span>
+                    <span class="spec-cat-sub">Visual Shading, Post-Processing &amp; VFX</span>
+                  </div>
+                </div>
+                <div class="spectrum-chips">
+                  <span class="s-chip highlight">Custom Shader Graph Pipelines</span>
+                  <span class="s-chip highlight">Procedural Dissolve, Noise &amp; Emission Effects</span>
+                  <span class="s-chip">Render Textures &amp; Screen-Space Pixelation Passes</span>
+                  <span class="s-chip">Post-Processing Stack, Color Grading &amp; HDR Bloom</span>
+                  <span class="s-chip">PBR Material Workflows &amp; Texture Mapping</span>
+                  <span class="s-chip">VFX Graph &amp; Particle Systems</span>
+                  <span class="s-chip">Real-Time Lighting, Lightmapping &amp; Skyboxes</span>
+                  <span class="s-chip">Draw Call Reduction &amp; Frame Debugger Analysis</span>
+                  <span class="s-chip">Multi-Resolution Canvas &amp; Dynamic UI Anchoring</span>
+                </div>
+              </div>
+
+              <!-- 04: GAME ENGINES & PLATFORMS -->
+              <div class="spectrum-row">
+                <div class="spectrum-header">
+                  <span class="spec-cat-num">D.</span>
+                  <div class="spec-cat-meta">
+                    <span class="spec-cat-name">GAME ENGINES &amp; ECOSYSTEM</span>
+                    <span class="spec-cat-sub">Primary Runtime &amp; Frameworks</span>
+                  </div>
+                </div>
+                <div class="spectrum-chips">
+                  <span class="s-chip highlight"><strong class="chip-key">Unity</strong> &mdash; Core Engine Architecture, C# Runtime &amp; URP Pipeline</span>
+                  <span class="s-chip"><strong class="chip-key">Unreal Engine</strong> &mdash; Blueprints, Gameplay Framework &amp; Level Design</span>
+                </div>
+              </div>
+
+              <!-- 05: ASSET PIPELINE & DCC SOFTWARES -->
+              <div class="spectrum-row">
+                <div class="spectrum-header">
+                  <span class="spec-cat-num">E.</span>
+                  <div class="spec-cat-meta">
+                    <span class="spec-cat-name">ASSET PIPELINE &amp; DCC TOOLS</span>
+                    <span class="spec-cat-sub">Asset Prep, Optimization &amp; PBR Texturing</span>
+                  </div>
+                </div>
+                <div class="spectrum-chips">
+                  <span class="s-chip highlight"><strong class="chip-key">Autodesk Maya &amp; Blender</strong> &mdash; Asset Prep, Pivot Alignment &amp; Clean Engine Exports</span>
+                  <span class="s-chip highlight"><strong class="chip-key">Substance 3D Painter</strong> &mdash; PBR Texture Baking &amp; Material Map Authoring</span>
+                  <span class="s-chip"><strong class="chip-key">Adobe Photoshop</strong> &mdash; Texture Masking, Normal Map Tweaks &amp; UI Assets</span>
+                  <span class="s-chip"><strong class="chip-key">Adobe Illustrator</strong> &mdash; Vector Graphics &amp; Clean UI Iconography</span>
+                </div>
+              </div>
+
+              <!-- 06: PRODUCTION PIPELINE & TELEMETRY TOOLS -->
+              <div class="spectrum-row">
+                <div class="spectrum-header">
+                  <span class="spec-cat-num">F.</span>
+                  <div class="spec-cat-meta">
+                    <span class="spec-cat-name">PIPELINE &amp; WORKFLOW TOOLS</span>
+                    <span class="spec-cat-sub">Version Control, Tooling &amp; Data Analysis</span>
+                  </div>
+                </div>
+                <div class="spectrum-chips">
+                  <span class="s-chip highlight">Git &amp; GitHub (Branching &amp; Release Flow)</span>
+                  <span class="s-chip highlight">GitHub Large File Storage (Git LFS)</span>
+                  <span class="s-chip"><strong class="chip-key">Notion &amp; Miro</strong> &mdash; GDD Specs, Mechanics Mapping &amp; Logic Flows</span>
+                  <span class="s-chip">Visual Studio / VS Code</span>
+                  <span class="s-chip">FastAPI &mdash; Lightweight Telemetry Backend</span>
+                  <span class="s-chip">React &amp; Vite &mdash; Data Visualization Dashboard</span>
+                  <span class="s-chip">pandas &mdash; Event Telemetry &amp; Log Analysis</span>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- 04: CREDENTIALS (EDUCATION & SPOKEN LANGUAGES) -->
+          <section class="about-flow-section">
+            <div class="section-tag-line">
+              <span class="sec-num">04</span>
+              <span class="sec-label">EDUCATION &amp; COMMUNICATION</span>
+            </div>
+
+            <div class="credentials-bar">
+              <div class="edu-feature-box">
+                <div class="box-tag">ACADEMIC BACKGROUND</div>
+                <div class="box-main-title">B.Sc. in Game Design &amp; Development</div>
+                <div class="box-sub">ICAT Design and Media College, Bengaluru &bull; 2024 &ndash; 2027 (Expected)</div>
+                <p class="box-desc">
+                  Focused training in Game Programming, Engine Architecture, 3D Modeling (Maya/Blender), PBR Texturing (Substance Painter), Game Physics, and Shader Development.
+                </p>
+              </div>
+
+              <div class="languages-feature-box">
+                <div class="box-tag">SPOKEN LANGUAGES</div>
+                <div class="lang-strip">
+                  <div class="lang-item">
+                    <span class="l-name">English</span>
+                    <span class="l-tag">Fluent</span>
+                  </div>
+                  <div class="lang-item">
+                    <span class="l-name">Hindi</span>
+                    <span class="l-tag">Conversational</span>
+                  </div>
+                  <div class="lang-item">
+                    <span class="l-name">Tamil</span>
+                    <span class="l-tag">Conversational</span>
+                  </div>
+                  <div class="lang-item">
+                    <span class="l-name">Malayalam</span>
+                    <span class="l-tag">Native</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 05: TARGET ROLES & COLLABORATION CTA -->
+          <section class="about-flow-section roles-cta-section">
+            <div class="roles-cta-wrapper">
+              
+              <div class="target-roles-col">
+                <div class="section-tag-line">
+                  <span class="sec-num">05</span>
+                  <span class="sec-label">TARGET CAREER ROLES</span>
+                </div>
+                <p class="roles-intro">
+                  Currently seeking opportunities where technical art, shader math, and gameplay engineering meet:
+                </p>
+                <div class="role-chip-cluster">
+                  <span class="r-pill primary">Gameplay Programmer</span>
+                  <span class="r-pill primary">Technical Artist</span>
+                  <span class="r-pill">Unity Game Developer</span>
+                  <span class="r-pill">Tools Programmer</span>
+                  <span class="r-pill">Game Systems Engineer</span>
+                  <span class="r-pill">Shader &amp; VFX Developer</span>
+                </div>
+              </div>
+
+              <div class="cta-direct-col">
+                <div class="cta-box-glow">
+                  <div class="cta-glow-title">LET'S BUILD SOMETHING GREAT</div>
+                  <p class="cta-glow-sub">Available for full-time studio roles, freelance technical art, and gameplay mechanics contract work.</p>
+                  <div class="cta-action-group">
+                    <button type="button" class="action-btn-main" id="aboutToContactBtn">
+                      <span>OPEN CONTACT FORM</span>
+                      <span class="arrow">&rarr;</span>
+                    </button>
+                    <a href="resume.pdf" target="_blank" rel="noopener" class="action-btn-outline">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                      <span>RÉSUMÉ PDF</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+        </div><!-- /about-flow -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
