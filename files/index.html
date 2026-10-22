@@ -97,7 +97,7 @@
 
           <button type="button" class="hub-btn" data-panel="about">
             <span class="btn-text">ABOUT</span>
-            <span class="btn-pill">ICAT &bull; SKILLS</span>
+            <span class="btn-pill">PROFILE // SKILLS</span>
           </button>
 
           <button type="button" class="hub-btn" data-panel="contact">
@@ -124,223 +124,1133 @@
 
 
   <!-- =========================================================================
-       MODAL OVERLAYS (Clean, focused cards)
+       DEDICATED FULL SCREEN WORK & GAMES VIEW (Clean full-page transition)
        ========================================================================= -->
-  <div class="panel-backdrop" id="panelBackdrop" aria-hidden="true"></div>
+  <section class="screen-view work-screen-view" id="workScreenView" aria-label="Work &amp; Games Section" hidden>
 
-  <div class="panel-stage">
+    <!-- Top Bar with Back Navigation -->
+    <div class="screen-topbar">
+      <button type="button" class="screen-back-btn" id="workBackBtn" aria-label="Back to Hub">
+        <svg class="back-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span class="back-text">BACK TO HUB</span>
+      </button>
 
-    <!-- 01: WORK / GAMES -->
-    <article class="modal-card" id="panel-work" role="dialog" aria-labelledby="work-title" aria-modal="true" hidden>
-      <header class="card-header">
-        <div class="card-meta">
-          <span class="card-idx">01</span>
-          <span class="card-category">GAME DEVELOPMENT</span>
+      <div class="screen-meta-badge">
+        <span class="status-indicator"></span>
+        <span>GAMEPLAY ARCHITECTURE // MULTIPLAYER // PROTOTYPES</span>
+      </div>
+    </div>
+
+    <!-- Spacious Scrollable Screen Content Container -->
+    <div class="screen-content-wrapper work-content-wrapper">
+      <div class="screen-work-panel">
+
+        <!-- Top Title Header matching About/Contact style -->
+        <div class="work-top-header">
+          <div class="contact-title-group">
+            <h1 id="work-screen-title" class="contact-title-text">W O R K &nbsp; &amp; &nbsp; G A M E S</h1>
+            <div class="contact-title-line" aria-hidden="true"></div>
+          </div>
         </div>
-        <button type="button" class="card-close" data-close aria-label="Close Work Panel">&times;</button>
-      </header>
 
-      <div class="card-body">
-        <h2 id="work-title" class="card-title">SELECTED GAMES &amp; SYSTEMS</h2>
-        <p class="card-lead">
-          Production-grade gameplay engineering, networked multiplayer combat, and creative mechanic prototypes built in Unity.
-        </p>
+        <!-- Work Flow Container -->
+        <div class="work-flow">
 
-        <div class="projects-stack">
+          <!-- 01: PROJECTS GRID (Clean gallery with rich cards & eye-catching tags) -->
+          <div class="projects-gallery-grid" id="projectsGalleryGrid">
 
-          <!-- PROJECT 1: CAMPUS 99 -->
-          <div class="project-entry">
-            <div class="entry-header">
-              <span class="entry-badge">NETCODE MULTIPLAYER</span>
-              <span class="entry-year">2026</span>
+            <!-- PROJECT CARD 1: REVERSE IT -->
+            <article class="gallery-card featured-winner" data-project-target="project-reverse-it">
+              
+              <!-- Thumbnail & Badges Container -->
+              <div class="card-thumb-wrap">
+                <img src="assets/images/reverse-it-poster.jpg" alt="Reverse It Game Poster" class="card-thumb-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                
+                <!-- Fallback artwork when image isn't loaded yet -->
+                <div class="card-thumb-fallback">
+                  <div class="fallback-glow"></div>
+                  <div class="fallback-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+                  </div>
+                  <span class="fallback-title">REVERSE IT</span>
+                </div>
+
+                <!-- Eye-Catching Game Jam Winner Ribbon -->
+                <div class="winner-ribbon-badge">
+                  <span class="trophy-icon">🏆</span>
+                  <span class="ribbon-text">GAME JAM WINNER &bull; 1ST PLACE</span>
+                </div>
+
+                <!-- Quick Platform Tag -->
+                <div class="thumb-platform-tag">MOBILE &bull; CASUAL PUZZLER</div>
+              </div>
+
+              <!-- Card Content Block -->
+              <div class="card-info-wrap">
+                <div class="card-meta-line">
+                  <span class="card-engine">UNITY 6</span>
+                  <span class="card-role">GAME PROGRAMMER &amp; TECH ARTIST</span>
+                </div>
+
+                <h3 class="card-game-title">REVERSE IT</h3>
+                
+                <p class="card-game-summary">
+                  A comedic, mechanic-driven mobile puzzle game turning ridiculous everyday situations into interactive reversal challenges.
+                </p>
+
+                <!-- Tags / Tech highlights -->
+                <div class="card-chips">
+                  <span class="c-chip highlight">Theme: Reverse</span>
+                  <span class="c-chip highlight">Mechanic Inversion</span>
+                  <span class="c-chip">Touch &amp; Swipes</span>
+                  <span class="c-chip">Custom Editor Tools</span>
+                </div>
+
+                <!-- Open Project CTA button -->
+                <div class="card-action-bar">
+                  <span class="action-btn-text">VIEW FULL PROJECT DETAILS</span>
+                  <span class="action-arrow" aria-hidden="true">&rarr;</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT CARD 2: CAMPUS 99 -->
+            <article class="gallery-card featured-winner" data-project-target="project-campus99">
+              
+              <!-- Thumbnail & Badges Container -->
+              <div class="card-thumb-wrap">
+                <img src="assets/images/Campus_99 thum.png" alt="Campus 99 Poster" class="card-thumb-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                
+                <!-- Fallback artwork when image isn't loaded yet -->
+                <div class="card-thumb-fallback">
+                  <div class="fallback-glow"></div>
+                  <div class="fallback-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="22" y1="12" x2="18" y2="12"></line><line x1="6" y1="12" x2="2" y2="12"></line><line x1="12" y1="6" x2="12" y2="2"></line><line x1="12" y1="22" x2="12" y2="18"></line></svg>
+                  </div>
+                  <span class="fallback-title">CAMPUS 99</span>
+                </div>
+
+                <!-- Eye-Catching Game Jam Winner Ribbon -->
+                <div class="winner-ribbon-badge">
+                  <span class="trophy-icon">🏆</span>
+                  <span class="ribbon-text">GAME JAM WINNER &bull; RETRO THEME</span>
+                </div>
+
+                <!-- Quick Platform Tag -->
+                <div class="thumb-platform-tag">PC &bull; MULTIPLAYER FPS</div>
+              </div>
+
+              <!-- Card Content Block -->
+              <div class="card-info-wrap">
+                <div class="card-meta-line">
+                  <span class="card-engine">UNITY 6 &bull; URP</span>
+                  <span class="card-role">GAME PROGRAMMER &amp; TECH ARTIST</span>
+                </div>
+
+                <h3 class="card-game-title">CAMPUS 99</h3>
+                
+                <p class="card-game-summary">
+                  Fast-paced tactical multiplayer FPS built for the Retro game jam theme, featuring custom HLSL team shaders, peer-to-peer Netcode Relay, and zero-allocation ballistics.
+                </p>
+
+                <!-- Tags / Tech highlights -->
+                <div class="card-chips">
+                  <span class="c-chip highlight">Theme: Retro</span>
+                  <span class="c-chip highlight">Custom HLSL Shaders</span>
+                  <span class="c-chip">NGO Multiplayer</span>
+                  <span class="c-chip">Occlusion Tooling</span>
+                </div>
+
+                <!-- Open Project CTA button -->
+                <div class="card-action-bar">
+                  <span class="action-btn-text">VIEW FULL PROJECT DETAILS</span>
+                  <span class="action-arrow" aria-hidden="true">&rarr;</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT CARD 3: DOCTOR GURUJI -->
+            <article class="gallery-card" data-project-target="project-doctor-guruji">
+              
+              <!-- Thumbnail & Badges Container -->
+              <div class="card-thumb-wrap">
+                <img src="assets/images/Doctor Guruji thumbnail.png" alt="Doctor Guruji Poster" class="card-thumb-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                
+                <!-- Fallback artwork when image isn't loaded yet -->
+                <div class="card-thumb-fallback">
+                  <div class="fallback-glow"></div>
+                  <div class="fallback-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                  </div>
+                  <span class="fallback-title">DOCTOR GURUJI</span>
+                </div>
+
+                <!-- BYOG Jam Tag -->
+                <div class="winner-ribbon-badge default-jam">
+                  <span class="trophy-icon">⚡</span>
+                  <span class="ribbon-text">BYOG GAME JAM</span>
+                </div>
+
+                <!-- Quick Platform Tag -->
+                <div class="thumb-platform-tag">PC &bull; 2D NARRATIVE COMEDY</div>
+              </div>
+
+              <!-- Card Content Block -->
+              <div class="card-info-wrap">
+                <div class="card-meta-line">
+                  <span class="card-engine">UNITY 6 &bull; 2D</span>
+                  <span class="card-role">GAME PROGRAMMER &amp; TECH ARTIST</span>
+                </div>
+
+                <h3 class="card-game-title">DOCTOR GURUJI</h3>
+                
+                <p class="card-game-summary">
+                  A satirical, narrative-driven 2D interactive fortune-telling comedy featuring dynamic UI choreography, tactile minigames, and custom editor tooling.
+                </p>
+
+                <!-- Tags / Tech highlights -->
+                <div class="card-chips">
+                  <span class="c-chip highlight">BYOG Jam</span>
+                  <span class="c-chip highlight">Pseudo-3D UI Shuffling</span>
+                  <span class="c-chip">Audio Ducking</span>
+                  <span class="c-chip">Custom Editor Tools</span>
+                </div>
+
+                <!-- Open Project CTA button -->
+                <div class="card-action-bar">
+                  <span class="action-btn-text">VIEW FULL PROJECT DETAILS</span>
+                  <span class="action-arrow" aria-hidden="true">&rarr;</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT CARD 4: THE LAST EXPERIMENT -->
+            <article class="gallery-card" data-project-target="project-last-experiment">
+              
+              <!-- Thumbnail & Badges Container -->
+              <div class="card-thumb-wrap">
+                <img src="assets/images/Last experiment.png" alt="The Last Experiment Poster" class="card-thumb-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                
+                <!-- Fallback artwork when image isn't loaded yet -->
+                <div class="card-thumb-fallback">
+                  <div class="fallback-glow"></div>
+                  <div class="fallback-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  </div>
+                  <span class="fallback-title">THE LAST EXPERIMENT</span>
+                </div>
+
+                <!-- 3-Day Game Jam Tag -->
+                <div class="winner-ribbon-badge default-jam">
+                  <span class="trophy-icon">⏳</span>
+                  <span class="ribbon-text">3-DAY GAME JAM</span>
+                </div>
+
+                <!-- Quick Platform Tag -->
+                <div class="thumb-platform-tag">PC &bull; TIME-TRAVEL PUZZLER</div>
+              </div>
+
+              <!-- Card Content Block -->
+              <div class="card-info-wrap">
+                <div class="card-meta-line">
+                  <span class="card-engine">UNITY 6</span>
+                  <span class="card-role">GAME PROGRAMMER &amp; TECH ARTIST</span>
+                </div>
+
+                <h3 class="card-game-title">THE LAST EXPERIMENT</h3>
+                
+                <p class="card-game-summary">
+                  A mind-bending time-travel puzzle-platformer where a stranded scientist manipulates historical timelines (1950&ndash;1990) and platform causality before time collapses.
+                </p>
+
+                <!-- Tags / Tech highlights -->
+                <div class="card-chips">
+                  <span class="c-chip highlight">3-Day Jam</span>
+                  <span class="c-chip highlight">Timeline Shifting</span>
+                  <span class="c-chip">Platform Causality</span>
+                  <span class="c-chip">Custom Editor Tools</span>
+                </div>
+
+                <!-- Open Project CTA button -->
+                <div class="card-action-bar">
+                  <span class="action-btn-text">VIEW FULL PROJECT DETAILS</span>
+                  <span class="action-arrow" aria-hidden="true">&rarr;</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT CARD 5: MASKOUT -->
+            <article class="gallery-card featured-winner" data-project-target="project-maskout">
+              
+              <!-- Thumbnail & Badges Container -->
+              <div class="card-thumb-wrap">
+                <img src="assets/images/Maskout.png" alt="Maskout Game Poster" class="card-thumb-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                
+                <!-- Fallback artwork when image isn't loaded yet -->
+                <div class="card-thumb-fallback">
+                  <div class="fallback-glow"></div>
+                  <div class="fallback-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-10 10c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"></path></svg>
+                  </div>
+                  <span class="fallback-title">MASKOUT</span>
+                </div>
+
+                <!-- Eye-Catching Game Jam Winner Ribbon -->
+                <div class="winner-ribbon-badge">
+                  <span class="trophy-icon">🏆</span>
+                  <span class="ribbon-text">GLOBAL GAME JAM WINNER</span>
+                </div>
+
+                <!-- Quick Platform Tag -->
+                <div class="thumb-platform-tag">PC / WEBGL &bull; 2D PLATFORMER</div>
+              </div>
+
+              <!-- Card Content Block -->
+              <div class="card-info-wrap">
+                <div class="card-meta-line">
+                  <span class="card-engine">UNITY 6 &bull; 2D</span>
+                  <span class="card-role">GAME PROGRAMMER &amp; TECH ARTIST</span>
+                </div>
+
+                <h3 class="card-game-title">MASKOUT</h3>
+                
+                <p class="card-game-summary">
+                  A precision 2D platformer created for Global Game Jam around the theme &ldquo;Mask&rdquo;, challenging players across fragile geometry, intricate hazards, and timed movement.
+                </p>
+
+                <!-- Tags / Tech highlights -->
+                <div class="card-chips">
+                  <span class="c-chip highlight">Theme: Mask</span>
+                  <span class="c-chip highlight">GGJ Winner</span>
+                  <span class="c-chip">Precision Controls</span>
+                  <span class="c-chip">Level &amp; UI Design</span>
+                </div>
+
+                <!-- Open Project CTA button -->
+                <div class="card-action-bar">
+                  <span class="action-btn-text">VIEW FULL PROJECT DETAILS</span>
+                  <span class="action-arrow" aria-hidden="true">&rarr;</span>
+                </div>
+              </div>
+            </article>
+
+          </div><!-- /projects-gallery-grid -->
+
+
+          <!-- 02: DEDICATED FULL PROJECT DETAIL VIEW (Opens when clicking card) -->
+          <article class="project-detail-view" id="project-reverse-it" hidden>
+
+            <!-- Back to Projects Gallery Navigation -->
+            <div class="detail-nav-bar">
+              <button type="button" class="detail-back-btn" data-back-to-gallery aria-label="Back to all projects">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>ALL PROJECTS</span>
+              </button>
+
+              <div class="detail-winner-pill">
+                🏆 COLLEGE GAME JAM WINNER
+              </div>
             </div>
-            <h3 class="entry-title">CAMPUS 99 — 4V4 RETRO MULTIPLAYER FPS</h3>
-            <p class="entry-sub">Unity 6 &bull; Netcode for GameObjects &bull; Unity Relay &bull; URP</p>
             
-            <div class="media-container">
-              <video class="project-video" autoplay loop muted playsinline poster="assets/images/campus99-preview.jpg" aria-label="Campus 99 gameplay video">
-                <source src="assets/videos/campus99-gameplay.mp4" type="video/mp4">
-              </video>
-              <div class="media-fallback">
-                <span class="fallback-tag">MULTIPLAYER FPS GAMEPLAY PREVIEW</span>
+            <!-- Project Header Bar -->
+            <div class="project-card-header">
+              <div class="p-title-cluster">
+                <div class="p-award-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                  <span>COLLEGE GAME JAM &bull; WINNER (1ST PLACE)</span>
+                </div>
+                <h2 class="p-game-title">REVERSE IT</h2>
+                <p class="p-game-tagline">A Humorous, Mechanic-Driven Puzzle Game Built Around Reversing Absurd Situations</p>
+              </div>
+
+              <!-- Quick Specs Chips -->
+              <div class="p-specs-grid">
+                <div class="p-spec-item">
+                  <span class="spec-label">ROLES</span>
+                  <span class="spec-val highlight">Game Programmer &amp; Tech Artist</span>
+                </div>
+                <div class="p-spec-item">
+                  <span class="spec-label">JAM THEME</span>
+                  <span class="spec-val highlight">&ldquo;REVERSE&rdquo;</span>
+                </div>
+                <div class="p-spec-item">
+                  <span class="spec-label">ENGINE</span>
+                  <span class="spec-val">Unity 6</span>
+                </div>
+                <div class="p-spec-item">
+                  <span class="spec-label">TEAM STRUCTURE</span>
+                  <span class="spec-val">3 Members (Solo Developer)</span>
+                </div>
               </div>
             </div>
 
-            <div class="entry-details">
-              <p>
-                Architected and programmed a high-octane 4v4 retro-stylized first-person shooter from ground up. 
-                Features responsive server-authoritative networked weapon recoil, client-side movement prediction, and zero-port-forwarding multiplayer lobby matching using Unity Relay &amp; Lobby services.
+            <!-- Media Showcase Container -->
+            <div class="p-media-showcase">
+              <div class="video-wrapper">
+                <video class="p-video" controls playsinline poster="assets/images/reverse-it-poster.jpg" preload="metadata">
+                  <source src="assets/videos/Reverse It.mp4" type="video/mp4">
+                  <source src="assets/videos/reverse-it-gameplay.mp4" type="video/mp4">
+                  <p>Your browser doesn't support HTML5 video.</p>
+                </video>
+                <div class="media-hint-bar">
+                  <span>GAMEPLAY PREVIEW // MOBILE TOUCH INTERACTIONS</span>
+                  <span class="time-tag">GAME JAM BUILD</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Overview & Hook Narrative -->
+            <div class="p-section-block">
+              <div class="block-tag">01 // CORE CONCEPT</div>
+              <h3 class="block-title">&ldquo;What if you could reverse anything?&rdquo;</h3>
+              <p class="p-narrative">
+                <strong>Reverse It</strong> turns ridiculous everyday scenarios into unexpected interactive challenges. Instead of standard puzzle solving, players must discover how to reverse an action, undo a physical state, or make an event play out in backward sequence. From returning a hatched chick back into an unbroken eggshell to calming someone desperately holding it together in an executive meeting, each level is a self-contained comedic interaction.
               </p>
-              <div class="entry-links">
-                <a href="https://github.com/mubiii2/campus99" target="_blank" rel="noopener" class="link-btn">
-                  <span>VIEW REPOSITORY</span>
-                  <span class="arrow" aria-hidden="true">&rarr;</span>
+            </div>
+
+            <!-- Dual Responsibilities Matrix: Programmer & Tech Artist -->
+            <div class="p-responsibilities-grid">
+              
+              <!-- Programmer Card -->
+              <div class="resp-card">
+                <div class="resp-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <h4 class="resp-heading">Gameplay Programming</h4>
+                <p class="resp-sub">Translating comedic concepts into tactile mobile interactions</p>
+                <ul class="resp-list">
+                  <li><strong>Mechanic-Driven Level Logic:</strong> Built isolated state machines and condition checkers for each distinct scenario.</li>
+                  <li><strong>Touch &amp; Swipe Interactions:</strong> Implemented drag, flick, release, and gesture detection tuned specifically for tactile mobile response.</li>
+                  <li><strong>Undo / State Reversal Systems:</strong> Engineered backward progression loops and animated state triggers upon puzzle completion.</li>
+                  <li><strong>Rapid Prototyping:</strong> Iterated and tested game loop ideas under tight game jam deadlines alongside the designer.</li>
+                </ul>
+              </div>
+
+              <!-- Tech Artist Card -->
+              <div class="resp-card">
+                <div class="resp-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </div>
+                <h4 class="resp-heading">Technical Art &amp; Editor Tooling</h4>
+                <p class="resp-sub">Optimizing pipeline assembly, responsive UI &amp; performance</p>
+                <ul class="resp-list">
+                  <li><strong>Custom Level Testing Tools:</strong> Built custom Unity Editor inspectors to trigger state overrides, fast-forward levels, and debug interactions in seconds.</li>
+                  <li><strong>Responsive Mobile Canvas:</strong> Configured multi-aspect ratio canvas scalers, anchor systems, and touch hitbox boundaries.</li>
+                  <li><strong>Asset Pipeline &amp; Slicing:</strong> Handled 2D sprite imports, pivot alignment, and visual layer sorting directly in Unity.</li>
+                  <li><strong>Mobile Performance Optimization:</strong> Profiled draw calls and managed batching to guarantee smooth 60 FPS mobile execution.</li>
+                </ul>
+              </div>
+
+            </div>
+
+            <!-- Core Interactive Mechanics Breakdown -->
+            <div class="p-section-block">
+              <div class="block-tag">02 // CORE INTERACTIVE MECHANICS</div>
+              <h3 class="block-title">Technical Architecture &amp; Gameplay Engineering</h3>
+              <div class="scenarios-grid">
+                
+                <div class="scenario-item">
+                  <span class="scen-num">01</span>
+                  <div class="scen-title">Touch &amp; Gesture Inversion</div>
+                  <div class="scen-desc">Dynamic touch tracking and swipe delta algorithms translating physical touch gestures into inverted backward physics states.</div>
+                </div>
+
+                <div class="scenario-item">
+                  <span class="scen-num">02</span>
+                  <div class="scen-title">Isolated State Machines</div>
+                  <div class="scen-desc">Modular event-driven state checkers for each level scenario, decoupling interaction triggers from win/fail sequence logic.</div>
+                </div>
+
+                <div class="scenario-item">
+                  <span class="scen-num">03</span>
+                  <div class="scen-title">Mobile Draw-Call Optimization</div>
+                  <div class="scen-desc">Strict sprite sheet packing, atlas caching, and dynamic canvas scaling maintaining a locked 60 FPS across varied mobile devices.</div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Takeaway & Impact -->
+            <div class="p-footer-banner">
+              <div class="banner-badge">OUTCOME &amp; IMPACT</div>
+              <p class="banner-text">
+                Awarded <strong>1st Place in the College Game Jam</strong>. Demonstrated end-to-end technical independence as the sole developer on a 3-person team, bridging creative game design with robust C# engineering and production editor tools.
+              </p>
+            </div>
+
+          </article>
+
+
+          <!-- 03: DEDICATED FULL PROJECT DETAIL VIEW: CAMPUS 99 -->
+          <article class="project-detail-view" id="project-campus99" hidden>
+
+            <!-- Back to Projects Gallery Navigation -->
+            <div class="detail-nav-bar">
+              <button type="button" class="detail-back-btn" data-back-to-gallery aria-label="Back to all projects">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>ALL PROJECTS</span>
+              </button>
+
+              <div class="detail-winner-pill">
+                🏆 COLLEGE GAME JAM WINNER
+              </div>
+            </div>
+            
+            <!-- Project Header Bar -->
+            <div class="project-card-header">
+              <div class="p-title-cluster">
+                <div class="p-award-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                  <span>COLLEGE GAME JAM &bull; WINNER</span>
+                </div>
+                <h2 class="p-game-title">CAMPUS 99</h2>
+                <p class="p-game-tagline">Tactical Fast-Paced Multiplayer FPS with Custom HLSL Shaders, Zero-GC Pooling &amp; Relay Networking</p>
+              </div>
+
+              <!-- Quick Specs Chips -->
+              <div class="p-specs-grid">
+                <div class="p-spec-item">
+                  <span class="spec-label">ROLES</span>
+                  <span class="spec-val highlight">Game Programmer &amp; Tech Artist</span>
+                </div>
+                <div class="p-spec-item">
+                  <span class="spec-label">JAM THEME</span>
+                  <span class="spec-val highlight">&ldquo;RETRO&rdquo;</span>
+                </div>
+                <div class="p-spec-item">
+                  <span class="spec-label">ENGINE &amp; PIPELINE</span>
+                  <span class="spec-val">Unity 6 &bull; URP</span>
+                </div>
+                <div class="p-spec-item">
+                  <span class="spec-label">TEAM STRUCTURE</span>
+                  <span class="spec-val">3 Members (Solo Developer)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Media Showcase Container -->
+            <div class="p-media-showcase">
+              <div class="video-wrapper">
+                <video class="p-video" controls playsinline poster="assets/images/Campus_99 thum.png" preload="metadata">
+                  <source src="assets/videos/Campus_99.mp4" type="video/mp4">
+                  <source src="assets/videos/campus99-gameplay.mp4" type="video/mp4">
+                  <p>Your browser doesn't support HTML5 video.</p>
+                </video>
+                <div class="media-hint-bar">
+                  <span>MULTIPLAYER FPS GAMEPLAY // PEER-TO-PEER RELAY</span>
+                  <span class="time-tag">TACTICAL FPS BUILD</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Overview & Hook Narrative -->
+            <div class="p-section-block">
+              <div class="block-tag">01 // PROJECT OVERVIEW</div>
+              <h3 class="block-title">Tactical Gunplay Meets High-Performance Optimization</h3>
+              <p class="p-narrative">
+                <strong>CAMPUS 99</strong> is a fast-paced tactical multiplayer first-person shooter set in an urban campus environment. Developed with <strong>Unity 6</strong> and the <strong>Universal Render Pipeline (URP)</strong>, the project was engineered to deliver competitive-grade gunplay, high visual clarity, and seamless peer-to-peer multiplayer without dedicated external server costs.
+              </p>
+            </div>
+
+            <!-- Dual Responsibilities Matrix: Tech Artist vs Network Programmer -->
+            <div class="p-responsibilities-grid">
+              
+              <!-- Technical Artist Card -->
+              <div class="resp-card">
+                <div class="resp-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </div>
+                <h4 class="resp-heading">Technical Art &amp; Real-Time Shaders</h4>
+                <p class="resp-sub">Custom URP shaders, occlusion tooling &amp; visual telegraphing</p>
+                <ul class="resp-list">
+                  <li><strong>Custom HLSL Team Silhouette Shader (<code>CharacterHighlight.shader</code>):</strong> Authored view-dependent Fresnel rim lighting with HDR color overdrive and tint controls for rapid target acquisition in complex architectural environments.</li>
+                  <li><strong>Always-Visible HUD Marker Shader (<code>TeammateMarkerDot.shader</code>):</strong> Custom unlit transparent pass with <code>ZTest Always</code> to display friendly indicators through walls with zero z-fighting.</li>
+                  <li><strong>Automated Occlusion &amp; Batching Tool (<code>OcclusionCullingSetup.cs</code>):</strong> Created an internal editor utility that scans hierarchies, applies static tags using algorithmic heuristics, and bakes cell matrices to drastically cut draw calls and GPU overdraw.</li>
+                  <li><strong>Visual Ballistics &amp; VFX Pipeline:</strong> Engineered muzzle flash bursts, parameterized trail tracers, particle impact debris, and surface decals with capped ring buffers.</li>
+                </ul>
+              </div>
+
+              <!-- Gameplay & Network Programmer Card -->
+              <div class="resp-card">
+                <div class="resp-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <h4 class="resp-heading">Gameplay &amp; Network Engineering</h4>
+                <p class="resp-sub">Multiplayer synchronization, ballistics &amp; memory optimization</p>
+                <ul class="resp-list">
+                  <li><strong>NGO + Unity Relay Networking:</strong> Integrated room-code matchmaking, NAT-punching lobbies, and client-interpolated transform replication (<code>PlayerNetworkTransform.cs</code>).</li>
+                  <li><strong>Raycast Ballistics &amp; Dynamic Bloom:</strong> Programmed continuous fire recoil accumulation, camera shake, and procedural weapon bobbing (<code>WeaponController.cs</code>).</li>
+                  <li><strong>Hierarchical Bone Hitbox System (<code>Hitbox.cs</code>):</strong> Implemented regional hit detection with headshot multipliers (critical/one-shot) validated server-side.</li>
+                  <li><strong>Zero-Allocation Object Pooling:</strong> Built decoupled recycling pools for bullet tracers, dynamic 3D spatialized flyby/impact audio, and decals, eliminating GC micro-stutter.</li>
+                </ul>
+              </div>
+
+            </div>
+
+            <!-- Core Systems Breakdown Grid -->
+            <div class="p-section-block">
+              <div class="block-tag">02 // ARCHITECTURE &amp; SYSTEMS DEEP-DIVE</div>
+              <h3 class="block-title">Key Engineering Highlights</h3>
+              <div class="scenarios-grid">
+                
+                <div class="scenario-item">
+                  <span class="scen-num">01</span>
+                  <div class="scen-title">HLSL Team Readability</div>
+                  <div class="scen-desc">Hand-authored URP Lit Forward passes with dynamic Fresnel rim lighting to ensure players stand out clearly against complex campus architecture.</div>
+                </div>
+
+                <div class="scenario-item">
+                  <span class="scen-num">02</span>
+                  <div class="scen-title">Editor Occlusion Automation</div>
+                  <div class="scen-desc">Algorithmic static batching tool with automated exclusion blacklists that bakes clean occlusion culling matrices in seconds.</div>
+                </div>
+
+                <div class="scenario-item">
+                  <span class="scen-num">03</span>
+                  <div class="scen-title">Zero-GC Ballistics Pooling</div>
+                  <div class="scen-desc">Decoupled recycling architecture for bullet tracers, spatialized flyby audio, and decal rings to lock 60+ FPS during intense gunfights.</div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Takeaway & Impact Banner -->
+            <div class="p-footer-banner">
+              <div class="banner-badge">OUTCOME &amp; IMPACT</div>
+              <p class="banner-text">
+                Winner in the <strong>College Game Jam</strong>. Combined multiplayer networking architecture with advanced technical art pipelines, proving the ability to deliver high-performance tactical multiplayer experiences within engine constraints.
+              </p>
+            </div>
+
+          </article>
+
+
+          <!-- 04: DEDICATED FULL PROJECT DETAIL VIEW: DOCTOR GURUJI -->
+          <article class="project-detail-view" id="project-doctor-guruji" hidden>
+
+            <!-- Back to Projects Gallery Navigation -->
+            <div class="detail-nav-bar">
+              <button type="button" class="detail-back-btn" data-back-to-gallery aria-label="Back to all projects">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>ALL PROJECTS</span>
+              </button>
+
+              <div class="detail-winner-pill default-jam-pill">
+                ⚡ BYOG GAME JAM ENTRY
+              </div>
+            </div>
+            
+            <!-- Project Header Bar -->
+            <div class="project-card-header">
+              <div class="p-title-cluster">
+                <div class="p-award-badge default-jam-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                  <span>BYOG GAME JAM &bull; COMEDY NARRATIVE</span>
+                </div>
+                <h2 class="p-game-title">DOCTOR GURUJI</h2>
+                <p class="p-game-tagline">A Satirical 2D Interactive Fortune-Telling Experience with Dynamic UI Choreography &amp; Custom Editor Tooling</p>
+              </div>
+
+              <!-- Quick Specs Chips -->
+              <div class="p-specs-grid">
+                <div class="p-spec-item">
+                  <span class="spec-label">ROLES</span>
+                  <span class="spec-val highlight">Game Programmer &amp; Tech Artist</span>
+                </div>
+                <div class="p-spec-item">
+                  <span class="spec-label">EVENT</span>
+                  <span class="spec-val highlight">BYOG Game Jam</span>
+                </div>
+                <div class="p-spec-item">
+                  <span class="spec-label">ENGINE</span>
+                  <span class="spec-val">Unity 6 &bull; 2D</span>
+                </div>
+                <div class="p-spec-item">
+                  <span class="spec-label">TEAM STRUCTURE</span>
+                  <span class="spec-val">3 Members (Solo Developer)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Media Showcase Container -->
+            <div class="p-media-showcase">
+              <div class="video-wrapper">
+                <video class="p-video" controls playsinline poster="assets/images/Doctor Guruji thumbnail.png" preload="metadata">
+                  <source src="assets/videos/Dr Guruji.mp4" type="video/mp4">
+                  <source src="assets/videos/Doctor Guruji.mp4" type="video/mp4">
+                  <source src="assets/videos/doctor-guruji.mp4" type="video/mp4">
+                  <p>Your browser doesn't support HTML5 video.</p>
+                </video>
+                <div class="media-hint-bar">
+                  <span>INTERACTIVE GAMEPLAY // UI CHOREOGRAPHY &amp; MINIGAMES</span>
+                  <span class="time-tag">BYOG JAM BUILD</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Overview & Hook Narrative -->
+            <div class="p-section-block">
+              <div class="block-tag">01 // PROJECT OVERVIEW</div>
+              <h3 class="block-title">Satirical Fortune-Telling &amp; Rigged Comedy Trials</h3>
+              <p class="p-narrative">
+                <strong>Doctor Guruji</strong> is an interactive narrative comedy game where players consult an eccentric spiritual guru (&ldquo;Guruji&rdquo;) to uncover their destiny. Through an escalating sequence of rigged trials&mdash;from a physics-based heart-shattering minigame to a high-stakes three-card monte illusion and celestial falling fortunes&mdash;the player discovers that destiny has an unexpected price: a mandatory &#8377;100 digital consultation fee backed by comical payment rejections.
+              </p>
+            </div>
+
+            <!-- Dual Responsibilities Matrix: Tech Artist vs Game Programmer -->
+            <div class="p-responsibilities-grid">
+              
+              <!-- Technical Artist Card -->
+              <div class="resp-card">
+                <div class="resp-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </div>
+                <h4 class="resp-heading">Technical Art &amp; Custom Shaders</h4>
+                <p class="resp-sub">HLSL cloth displacement, pseudo-3D transforms &amp; layout automation</p>
+                <ul class="resp-list">
+                  <li><strong>Custom HLSL Hanging Cloth &amp; Wind Shader (<code>HangingClothWind.shader</code>):</strong> Authored dual-harmonic compound vertex displacement with exponential top-edge pinning (<code>_PinTop</code>) and multi-octave UV ripple billow, simulating realistic banner physics on uGUI canvas elements.</li>
+                  <li><strong>Procedural Surface Fold Shading:</strong> Integrated fake ambient occlusion and creased highlight calculations based on simulated cloth folds to give 2D banners tactile depth.</li>
+                  <li><strong>Pseudo-3D 2D Card Flip Illusion:</strong> Programmed a cosine-interpolated X-scale squash-and-stretch pipeline mimicking 3D card flips purely in Unity uGUI canvas space without Z-fighting.</li>
+                  <li><strong>Sinusoidal Arc Shuffling:</strong> Animate card swaps dynamically across slots using parabolic trajectory arcs (<code>Mathf.Sin(t * &pi;) * 45px</code>) to avoid visual overlap.</li>
+                  <li><strong>Runtime UI Anchor Sanitizer:</strong> Engineered custom runtime layout sanitization (<code>EnsureCorrectAnchoring()</code>) to guarantee pixel-perfect registration across 16:9, 18:9, and ultrawide displays.</li>
+                </ul>
+              </div>
+
+              <!-- Gameplay Programmer Card -->
+              <div class="resp-card">
+                <div class="resp-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <h4 class="resp-heading">Gameplay Architecture &amp; Sound Systems</h4>
+                <p class="resp-sub">Decoupled minigames, audio ducking &amp; dialogue engine</p>
+                <ul class="resp-list">
+                  <li><strong>Modular Minigame State Architecture:</strong> Built decoupled, event-driven minigame controllers orchestrated by a centralized state machine (<code>GurujiQuestionPhaseManager</code> &amp; <code>Level1FlowManager</code>).</li>
+                  <li><strong>Real-Time Dynamic Audio Ducking:</strong> Developed a thread-safe priority token audio subsystem (<code>BackgroundMusicManager</code>) featuring logarithmic volume ducking during voice lines, restoring ambient BGM seamlessly upon completion.</li>
+                  <li><strong>Voice-Synchronized Typewriter Subtitles:</strong> Engineered a character-by-character typewriter subtitle system with procedural sound blips, cadence delays, and dynamic font glyph sanitization.</li>
+                  <li><strong>Procedural 2D Shatter Physics &amp; Haptics:</strong> Programmed directional impulse shattering for the Heart Break trial (<code>HeartShard.cs</code>) alongside decaying sinusoidal screen shakes for payment rejections.</li>
+                  <li><strong>Hot-Plug Smart Component Discovery:</strong> Wrote reflective auto-binders that scan object hierarchies at runtime, preventing broken inspector bindings and missing null references.</li>
+                </ul>
+              </div>
+
+            </div>
+
+            <!-- Custom Editor Tooling Breakdown Grid -->
+            <div class="p-section-block">
+              <div class="block-tag">02 // CUSTOM TOOLS &amp; EDITOR PIPELINES</div>
+              <h3 class="block-title">Internal Studio Tooling Developed for the Project</h3>
+              <div class="scenarios-grid">
+                
+                <div class="scenario-item">
+                  <span class="scen-num">01</span>
+                  <div class="scen-title">Dialogue &amp; Voice Updater</div>
+                  <div class="scen-desc">900+ line Editor pipeline with <code>[MenuItem]</code> batching that auto-assigns localized voice lines, typewriter delays, and builds pause menus programmatically.</div>
+                </div>
+
+                <div class="scenario-item">
+                  <span class="scen-num">02</span>
+                  <div class="scen-title">Dynamic Anchor Sanitizer</div>
+                  <div class="scen-desc">Automated utility that sanitizes out-of-bounds RectTransform coordinates and centers ornate illustrative scrolls with exact pixel-to-unit ratios across all viewports.</div>
+                </div>
+
+                <div class="scenario-item">
+                  <span class="scen-num">03</span>
+                  <div class="scen-title">Headless Scene &amp; BGM Setup</div>
+                  <div class="scen-desc">Headless scene setup tools that instantiate credits hierarchies, configure persistent audio singletons, and hook background auto-saving during rapid play-testing.</div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Takeaway & Impact Banner -->
+            <div class="p-footer-banner">
+              <div class="banner-badge">OUTCOME &amp; IMPACT</div>
+              <p class="banner-text">
+                Developed for the <strong>BYOG (Build Your Own Game) Jam</strong>. Showcases strong capability in turning creative comedy concepts into polished interactive gameplay through responsive UI motion, custom audio engineering, and robust Unity Editor tools.
+              </p>
+            </div>
+
+          </article>
+
+
+          <!-- 04: DEDICATED FULL PROJECT DETAIL VIEW: THE LAST EXPERIMENT -->
+          <article class="project-detail-view" id="project-last-experiment" hidden>
+
+            <!-- Back to Projects Gallery Navigation -->
+            <div class="detail-nav-bar">
+              <button type="button" class="detail-back-btn" data-back-to-gallery aria-label="Back to all projects">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>ALL PROJECTS</span>
+              </button>
+
+              <div class="detail-winner-pill default-jam-pill">
+                ⏳ 3-DAY GAME JAM
+              </div>
+            </div>
+            
+            <!-- Project Header Bar -->
+            <div class="project-card-header">
+              <div class="p-title-cluster">
+                <div class="p-award-badge default-jam-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span>3-DAY GAME JAM &bull; TIME-TRAVEL PUZZLE-PLATFORMER</span>
+                </div>
+                <h2 class="p-game-title">THE LAST EXPERIMENT</h2>
+                <p class="p-game-tagline">A Mind-Bending Time-Travel Puzzle-Platformer Where Rewriting History Is the Only Way Forward</p>
+              </div>
+
+              <!-- Quick Specs Chips -->
+              <div class="p-specs-grid">
+                <div class="p-spec-item">
+                  <span class="spec-label">ROLES</span>
+                  <span class="spec-val highlight">Game Programmer &amp; Tech Artist</span>
+                </div>
+                <div class="p-spec-item">
+                  <span class="spec-label">EVENT</span>
+                  <span class="spec-val highlight">3-Day Game Jam</span>
+                </div>
+                <div class="p-spec-item">
+                  <span class="spec-label">ENGINE</span>
+                  <span class="spec-val">Unity 6</span>
+                </div>
+                <div class="p-spec-item">
+                  <span class="spec-label">TEAM STRUCTURE</span>
+                  <span class="spec-val">4 Members (Solo Developer)</span>
+                </div>
+              </div>
+
+              <!-- External Links Bar -->
+              <div class="project-external-links">
+                <a href="https://foxape123.itch.io/the-last-experiment" target="_blank" rel="noopener noreferrer" class="p-link-btn primary-jam-link">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M2.5 5.5C2.5 4.67 3.17 4 4 4h16c.83 0 1.5.67 1.5 1.5v3c0 .83-.67 1.5-1.5 1.5H4C3.17 10 2.5 9.33 2.5 8.5v-3zm0 7C2.5 11.67 3.17 11 4 11h16c.83 0 1.5.67 1.5 1.5v6c0 .83-.67 1.5-1.5 1.5H4c-.83 0-1.5-.67-1.5-1.5v-6z"/></svg>
+                  <span>PLAY ON ITCH.IO</span>
+                  <span class="star-rating">&#9733; 5.0 RATED</span>
+                </a>
+                <a href="https://www.youtube.com/watch?v=1-EmuVc4z5U" target="_blank" rel="noopener noreferrer" class="p-link-btn youtube-jam-link">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                  <span>WATCH ON YOUTUBE</span>
                 </a>
               </div>
             </div>
-          </div>
 
-          <!-- PROJECT 2: BOINGRUSH -->
-          <div class="project-entry">
-            <div class="entry-header">
-              <span class="entry-badge">PHYSICS PLATFORMER</span>
-              <span class="entry-year">2025</span>
+            <!-- Media Showcase Container -->
+            <div class="p-media-showcase">
+              <div class="video-wrapper">
+                <iframe class="p-video" src="https://www.youtube.com/embed/1-EmuVc4z5U?rel=0" title="The Last Experiment - Gameplay Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="media-hint-bar">
+                  <span>TIME-TRAVEL PUZZLE PLATFORMER // GAMEPLAY WALKTHROUGH</span>
+                  <span class="time-tag">3-DAY JAM BUILD</span>
+                </div>
+              </div>
             </div>
-            <h3 class="entry-title">BOINGRUSH — SLINGSHOT PLATFORMING CONCEPT</h3>
-            <p class="entry-sub">Spring-Based Physics &bull; Drag-and-Release Trajectory &bull; Risk-Reward Levels</p>
-            <div class="entry-details">
-              <p>
-                A physics-based platforming concept built around tactile spring-like movement and slingshot momentum mechanics. Players aim drag-and-release impulses to traverse treacherous vertical levels with risk-and-reward trajectory timing and competitive multiplayer potential.
+
+            <!-- Overview & Hook Narrative -->
+            <div class="p-section-block">
+              <div class="block-tag">01 // PROJECT OVERVIEW</div>
+              <h3 class="block-title">Temporal Paradoxes, Environmental Causality &amp; Collapsing Timelines</h3>
+              <p class="p-narrative">
+                When a temporal experiment goes catastrophically wrong, a physicist from 2025 is flung decades into the past. Stranded in 1990, he must travel backward through time&mdash;to 1970, 1950, and beyond&mdash;to reverse what he broke. Every leap across eras forces players to reconsider cause and effect: manipulating platforms in 1950 directly reshapes obstacles in 1990. But every jump incurs a heavy cost: if the temporal countdown expires, the scientist is marooned in the past forever, and history rewrites itself around him.
               </p>
             </div>
-          </div>
 
-          <!-- PROJECT 3: GLUED -->
-          <div class="project-entry">
-            <div class="entry-header">
-              <span class="entry-badge">ENVIRONMENTAL PUZZLER</span>
-              <span class="entry-year">2025</span>
+            <!-- Dual Responsibilities Matrix: Tech Artist vs Game Programmer -->
+            <div class="p-responsibilities-grid">
+              
+              <!-- Technical Artist Card -->
+              <div class="resp-card">
+                <div class="resp-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </div>
+                <h4 class="resp-heading">Technical Art &amp; Era Visual Identity</h4>
+                <p class="resp-sub">Temporal post-processing, parallax depth &amp; editor workflows</p>
+                <ul class="resp-list">
+                  <li><strong>Temporal Color Grading &amp; Era Visual Shifts:</strong> Built distinct visual aesthetics per historical period using custom volume color grading LUTs (sepia-tinted vintage warmth for 1950, retro CRT scanline vibes for 1990, and pristine modern sterile tones for 2025).</li>
+                  <li><strong>Layered Parallax &amp; Multi-Plane Depth:</strong> Structured multi-depth background layers and custom parallax scrolling controllers, giving 2D levels cinematic visual perspective during rapid horizontal traversal.</li>
+                  <li><strong>Sprite Atlas Packaging &amp; Draw-Call Batching:</strong> Unified hundreds of distinct period environment tilesets and architectural props into compact texture atlases, maintaining high performance and zero frame drops.</li>
+                  <li><strong>Cinemachine Dynamic Camera Bounds:</strong> Configured smooth camera damping with adaptive boundary colliders and zoom transitions when shifting between eras.</li>
+                  <li><strong>Temporal Transition FX:</strong> Programmed screen warp distortions and chromatic aberrations triggered during era leaps.</li>
+                </ul>
+              </div>
+
+              <!-- Gameplay Programmer Card -->
+              <div class="resp-card">
+                <div class="resp-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <h4 class="resp-heading">Gameplay Architecture &amp; Mechanics</h4>
+                <p class="resp-sub">Multi-era state machines, timeline clocks &amp; platform causality</p>
+                <ul class="resp-list">
+                  <li><strong>Cross-Era Causality Architecture:</strong> Engineered decoupled state trackers linking physical actions across historical eras (e.g., activating a pressure switch in 1950 removes structural barricades in 1990).</li>
+                  <li><strong>Temporal Tension Countdown Subsystem:</strong> Developed an escalating timer subsystem with audio-visual distortion triggers that penalizes stalls and enforces urgency before history collapses.</li>
+                  <li><strong>Precise 2D Platformer Character Controller:</strong> Programmed a responsive kinematic controller featuring coyote time, jump buffering, variable jump heights, and moving-platform velocity inheritance.</li>
+                  <li><strong>Interactive Mechanism System:</strong> Designed modular interactive components (timed doors, motorized lifts, physical switches, laser barriers) using event-driven interfaces.</li>
+                  <li><strong>Scene &amp; Checkpoint Flow Manager:</strong> Implemented seamless restart and checkpoint respawn logic that preserves puzzle causality state across era changes.</li>
+                </ul>
+              </div>
+
             </div>
-            <h3 class="entry-title">GLUED — FIRST-PERSON COLLAPSE PUZZLER</h3>
-            <p class="entry-sub">Object Attachment Physics &bull; Vertical Traversal &bull; Creative Problem Solving</p>
-            <div class="entry-details">
-              <p>
-                A first-person atmospheric concept set in a collapsing fantasy world. Uses an adhesive gun mechanic to bind loose physical objects together in real time, constructing improvised platforms and ladders to ascend toward the moon.
+
+            <!-- Custom Editor Tooling Breakdown Grid -->
+            <div class="p-section-block">
+              <div class="block-tag">02 // CUSTOM TOOLS &amp; EDITOR PIPELINES</div>
+              <h3 class="block-title">Internal Studio Tooling Developed for the Project</h3>
+              <div class="scenarios-grid">
+                
+                <div class="scenario-item">
+                  <span class="scen-num">01</span>
+                  <div class="scen-title">Timeline Era Quick-Switch Inspector</div>
+                  <div class="scen-desc">Custom Unity Editor utility allowing designers to scrub and teleport the player between 1950, 1970, 1990, and 2025 in the scene view with one click, slashing puzzle iteration times.</div>
+                </div>
+
+                <div class="scenario-item">
+                  <span class="scen-num">02</span>
+                  <div class="scen-title">Causal Link Validator</div>
+                  <div class="scen-desc">In-editor verification script scanning the active hierarchy to ensure every temporal switch in past eras is connected to a valid receiving platform or door in future eras before build time.</div>
+                </div>
+
+                <div class="scenario-item">
+                  <span class="scen-num">03</span>
+                  <div class="scen-title">Puzzle State Serializer</div>
+                  <div class="scen-desc">ScriptableObject-backed level definition system that presets initial timeline era platform configurations and checkpoint states cleanly without scene clutter.</div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Takeaway & Impact Banner -->
+            <div class="p-footer-banner">
+              <div class="banner-badge">OUTCOME &amp; IMPACT</div>
+              <p class="banner-text">
+                Developed in a <strong>72-hour Game Jam as the Sole Developer on a 4-Person Team</strong>. Rated <strong>5.0 / 5.0 stars on itch.io</strong>. Successfully united complex multi-timeline causality, precision platforming physics, and temporal tension mechanics into a coherent, highly engaging puzzle experience.
               </p>
             </div>
-          </div>
 
-          <!-- PROJECT 3: THE LAST EXPERIMENT -->
-          <div class="project-entry">
-            <div class="entry-header">
-              <span class="entry-badge">HORROR ATMOSPHERIC</span>
-              <span class="entry-year">2025</span>
-            </div>
-            <h3 class="entry-title">THE LAST EXPERIMENT</h3>
-            <p class="entry-sub">First-Person Psychological Horror &bull; State Machine AI &bull; Audio Cues</p>
-            <div class="entry-details">
-              <p>
-                A first-person atmospheric psychological horror game exploring tension, acoustic spatialization, and claustrophobic pacing. 
-                Engineered an intelligent patrolling enemy entity driven by finite state machines with hearing sensitivity and line-of-sight Raycasts.
-              </p>
-            </div>
-          </div>
+          </article>
 
-          <!-- PROJECT 4: REVERSE IT -->
-          <div class="project-entry">
-            <div class="entry-header">
-              <span class="entry-badge">COLLEGE GAME JAM &bull; WINNER (1ST PLACE)</span>
-              <span class="entry-year">2024</span>
-            </div>
-            <h3 class="entry-title">REVERSE IT — MECHANIC-DRIVEN PUZZLER</h3>
-            <p class="entry-sub">Mechanics Inversion &bull; Rapid Prototyping &bull; Level-Based Progression</p>
-            <div class="entry-details">
-              <p>
-                Awarded 1st place in a competitive college game jam. Developed around level-specific mechanics and gameplay challenges, dynamically inverting gravity vectors and controls to force players into rapid, spatial problem-solving.
-              </p>
-            </div>
-          </div>
 
-          <!-- PROJECT 5: MASKOUT -->
-          <div class="project-entry">
-            <div class="entry-header">
-              <span class="entry-badge">GLOBAL GAME JAM</span>
-              <span class="entry-year">2024</span>
+          <!-- 05: DEDICATED FULL PROJECT DETAIL VIEW: MASKOUT -->
+          <article class="project-detail-view" id="project-maskout" hidden>
+
+            <!-- Back to Projects Gallery Navigation -->
+            <div class="detail-nav-bar">
+              <button type="button" class="detail-back-btn" data-back-to-gallery aria-label="Back to all projects">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>ALL PROJECTS</span>
+              </button>
+
+              <div class="detail-winner-pill">
+                🏆 GLOBAL GAME JAM WINNER
+              </div>
             </div>
-            <h3 class="entry-title">MASKOUT — COLLABORATIVE GAME JAM PROJECT</h3>
-            <p class="entry-sub">Unity &bull; Rapid Prototyping &bull; Theme Exploration &bull; Playable on itch.io</p>
-            <div class="entry-details">
-              <p>
-                A collaborative Global Game Jam project developed around the theme of masks. Explores creative gameplay loops, dynamic interaction states, and rapid prototype iteration under strict hackathon timeframes.
-              </p>
-              <div class="entry-links">
-                <a href="https://zaki-092.itch.io/maskout" target="_blank" rel="noopener" class="link-btn">
-                  <span>PLAY MASKOUT ON ITCH.IO</span>
-                  <span class="arrow" aria-hidden="true">&rarr;</span>
+            
+            <!-- Project Header Bar -->
+            <div class="project-card-header">
+              <div class="p-title-cluster">
+                <div class="p-award-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                  <span>GLOBAL GAME JAM &bull; WINNER</span>
+                </div>
+                <h2 class="p-game-title">MASKOUT</h2>
+                <p class="p-game-tagline">&ldquo;In a world built from fragile geometry and hidden paths, masks are the only way forward.&rdquo;</p>
+              </div>
+
+              <!-- Quick Specs Chips -->
+              <div class="p-specs-grid">
+                <div class="p-spec-item">
+                  <span class="spec-label">ROLES</span>
+                  <span class="spec-val highlight">Game Programmer &amp; Tech Artist</span>
+                </div>
+                <div class="p-spec-item">
+                  <span class="spec-label">JAM THEME</span>
+                  <span class="spec-val highlight">&ldquo;MASK&rdquo;</span>
+                </div>
+                <div class="p-spec-item">
+                  <span class="spec-label">ENGINE</span>
+                  <span class="spec-val">Unity 6 &bull; 2D</span>
+                </div>
+                <div class="p-spec-item">
+                  <span class="spec-label">TEAM STRUCTURE</span>
+                  <span class="spec-val">4 Members</span>
+                </div>
+              </div>
+
+              <!-- External Links Bar -->
+              <div class="project-external-links">
+                <a href="https://zaki-092.itch.io/maskout" target="_blank" rel="noopener noreferrer" class="p-link-btn primary-jam-link">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M2.5 5.5C2.5 4.67 3.17 4 4 4h16c.83 0 1.5.67 1.5 1.5v3c0 .83-.67 1.5-1.5 1.5H4C3.17 10 2.5 9.33 2.5 8.5v-3zm0 7C2.5 11.67 3.17 11 4 11h16c.83 0 1.5.67 1.5 1.5v6c0 .83-.67 1.5-1.5 1.5H4c-.83 0-1.5-.67-1.5-1.5v-6z"/></svg>
+                  <span>PLAY ON ITCH.IO (WEBGL)</span>
+                  <span class="star-rating">PLAYABLE BUILD</span>
                 </a>
               </div>
             </div>
-          </div>
+
+            <!-- Media Showcase Container -->
+            <div class="p-media-showcase">
+              <div class="video-wrapper">
+                <video class="p-video" controls playsinline poster="assets/images/Maskout.png" preload="metadata">
+                  <source src="assets/videos/Maskout.mp4" type="video/mp4">
+                  <source src="assets/videos/maskout.mp4" type="video/mp4">
+                  <p>Your browser doesn't support HTML5 video.</p>
+                </video>
+                <div class="media-hint-bar">
+                  <span>PRECISION 2D PLATFORMER // GAMEPLAY WALKTHROUGH</span>
+                  <span class="time-tag">GLOBAL GAME JAM BUILD</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Overview & Hook Narrative -->
+            <div class="p-section-block">
+              <div class="block-tag">01 // PROJECT OVERVIEW</div>
+              <h3 class="block-title">Fragile Geometry, Environmental Obstacles &amp; Precision Platforming</h3>
+              <p class="p-narrative">
+                <strong>Maskout</strong> is a precision 2D platformer developed for the <strong>Global Game Jam</strong> under the theme <em>&ldquo;Mask&rdquo;</em>. Navigating a stylized world composed of fragile geometry and hidden paths, players must overcome escalating environmental obstacles that demand surgical timing, micro-adjustments, and spatial awareness. Developed under tight jam deadlines, the project brought together gameplay programming, level design, UI implementation, and environment integration into a tight, award-winning experience.
+              </p>
+            </div>
+
+            <!-- Dual Responsibilities Matrix: Tech Artist vs Game Programmer -->
+            <div class="p-responsibilities-grid">
+              
+              <!-- Technical Artist & Environment Card -->
+              <div class="resp-card">
+                <div class="resp-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </div>
+                <h4 class="resp-heading">Technical Art &amp; Environment Setup</h4>
+                <p class="resp-sub">Layered sprite architecture, responsive UI &amp; WebGL optimization</p>
+                <ul class="resp-list">
+                  <li><strong>Environment Setup &amp; Asset Integration:</strong> Sliced and configured 2D sprite sheets into unified tilemaps, establishing explicit sorting layers (<code>Background</code>, <code>Geometry</code>, <code>Hazards</code>, <code>Foreground</code>) to guarantee clean depth and obstacle silhouette clarity.</li>
+                  <li><strong>Responsive UI Implementation:</strong> Built and integrated the game's user interface, title flow, and pause overlays using uGUI with dynamic aspect-ratio canvas scaling.</li>
+                  <li><strong>Visual Polish &amp; Micro-Feedback:</strong> Authored particle effects for jump dust and landing impacts, accompanied by procedural camera impulse shakes on fatal hazards.</li>
+                  <li><strong>WebGL Draw-Call Batching:</strong> Consolidated environmental tiles and UI sprites into shared atlases to maintain a consistent 60 FPS in WebGL browsers without memory spikes.</li>
+                  <li><strong>Camera Framing &amp; Boundary Constraints:</strong> Tuned 2D virtual camera damping and bounding colliders to keep fast player velocity readable without disorientation.</li>
+                </ul>
+              </div>
+
+              <!-- Gameplay Programmer & Level Designer Card -->
+              <div class="resp-card">
+                <div class="resp-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <h4 class="resp-heading">Gameplay Programming &amp; Level Design</h4>
+                <p class="resp-sub">Precision kinematic physics, hazard logic &amp; level flow</p>
+                <ul class="resp-list">
+                  <li><strong>Precision Kinematic Controller:</strong> Authored player movement mechanics in C# with fine-tuned coyote time, jump buffering, and responsive deceleration curves designed specifically for high-precision platforming.</li>
+                  <li><strong>Environmental Obstacles &amp; Hazard Logic:</strong> Scripted modular hazard triggers and collision volumes with instant respawn checkpoint resets to deliver a fast, frictionless death-and-retry gameplay loop.</li>
+                  <li><strong>Level Layout &amp; Obstacle Progression:</strong> Designed and constructed level stages, pacing obstacle density to steadily test player mastery of jumping distances, timing windows, and spatial pathfinding.</li>
+                  <li><strong>Game State &amp; Transition Orchestration:</strong> Programmed the game loop state machine handling level transitions, victory triggers, and scene reloading seamlessly.</li>
+                  <li><strong>Playtesting &amp; Difficulty Calibration:</strong> Iterated controls and collision hitboxes throughout the jam window to eliminate snag points and verify fair obstacle clearance.</li>
+                </ul>
+              </div>
+
+            </div>
+
+            <!-- Custom Editor Tooling Breakdown Grid -->
+            <div class="p-section-block">
+              <div class="block-tag">02 // CUSTOM TOOLS &amp; WORKFLOW PIPELINES</div>
+              <h3 class="block-title">Internal Studio Tooling &amp; Utilities</h3>
+              <div class="scenarios-grid">
+                
+                <div class="scenario-item">
+                  <span class="scen-num">01</span>
+                  <div class="scen-title">Checkpoint Spawner &amp; Teleport Utility</div>
+                  <div class="scen-desc">Custom scene-view gizmo tool enabling the team to drop the player into any checkpoint instantly during playtesting without restarting the stage.</div>
+                </div>
+
+                <div class="scenario-item">
+                  <span class="scen-num">02</span>
+                  <div class="scen-title">Collider Boundary Snap Utility</div>
+                  <div class="scen-desc">Editor alignment utility that snaps geometric platform colliders to pixel-grid increments, preventing physics snagging and micro-seam collisions.</div>
+                </div>
+
+                <div class="scenario-item">
+                  <span class="scen-num">03</span>
+                  <div class="scen-title">Level Progression Configurator</div>
+                  <div class="scen-desc">ScriptableObject-based stage database allowing instant reordering, test scene bypassing, and fast build compilation under jam deadlines.</div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Takeaway & Impact Banner -->
+            <div class="p-footer-banner">
+              <div class="banner-badge">OUTCOME &amp; IMPACT</div>
+              <p class="banner-text">
+                Developed for the <strong>Global Game Jam (GGJ)</strong> and recognized as a <strong>Game Jam Winner</strong>. Proved the ability to wear multiple hats—gameplay programming, level design, UI, and technical environment setup—under strict game-jam deadlines to deliver an award-winning, fully playable experience.
+              </p>
+            </div>
+
+          </article>
 
         </div>
+
       </div>
-    </article>
+    </div>
+  </section>
 
-    <!-- 02: TECH ART & TOOLS -->
-    <article class="modal-card" id="panel-techart" role="dialog" aria-labelledby="techart-title" aria-modal="true" hidden>
-      <header class="card-header">
-        <div class="card-meta">
-          <span class="card-idx">02</span>
-          <span class="card-category">TECHNICAL ART &amp; TOOLS</span>
-        </div>
-        <button type="button" class="card-close" data-close aria-label="Close Tech Art Panel">&times;</button>
-      </header>
+  <!-- =========================================================================
+       DEDICATED FULL SCREEN TECH ART & TOOLS VIEW (Clean full-page transition)
+       ========================================================================= -->
+  <section class="screen-view techart-screen-view" id="techartScreenView" aria-label="Technical Art &amp; Tools Section" hidden>
 
-      <div class="card-body">
-        <h2 id="techart-title" class="card-title">SHADERS, VFX &amp; PIPELINES</h2>
-        <p class="card-lead">
-          Real-time graphics optimization, custom shader programming, and studio production tools.
-        </p>
+    <!-- Top Bar with Back Navigation -->
+    <div class="screen-topbar">
+      <button type="button" class="screen-back-btn" id="techartBackBtn" aria-label="Back to Hub">
+        <svg class="back-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span class="back-text">BACK TO HUB</span>
+      </button>
 
-        <div class="projects-stack">
-
-          <!-- TOOL 1: URP DISSOLVE SHADER -->
-          <div class="project-entry">
-            <div class="entry-header">
-              <span class="entry-badge">URP SHADER GRAPH / HLSL</span>
-              <span class="entry-year">2026</span>
-            </div>
-            <h3 class="entry-title">CUSTOM URP DISSOLVE SHADER &amp; VFX</h3>
-            <p class="entry-sub">Triplanar Projection &bull; 3D Noise Sampling &bull; HDR Emission Edge</p>
-
-            <div class="media-container">
-              <video class="project-video" autoplay loop muted playsinline poster="assets/images/dissolve-preview.jpg" aria-label="Dissolve shader preview video">
-                <source src="assets/videos/dissolve-shader.mp4" type="video/mp4">
-              </video>
-              <div class="media-fallback">
-                <span class="fallback-tag">PROCEDURAL SHADER DEMO</span>
-              </div>
-            </div>
-
-            <div class="entry-details">
-              <p>
-                Built a production-ready procedural dissolve shader for Unity Universal Render Pipeline (URP). 
-                Eliminates UV seams using 3D Perlin/Simplex noise coordinate generation, dual-threshold clipping, and dynamic HDR edge bloom integration.
-              </p>
-            </div>
-          </div>
-
-          <!-- TOOL 2: LILA PLAYER JOURNEY VISUALIZATION TOOL -->
-          <div class="project-entry">
-            <div class="entry-header">
-              <span class="entry-badge">DATA VISUALIZATION &bull; FULL-STACK TOOL</span>
-              <span class="entry-year">2025</span>
-            </div>
-            <h3 class="entry-title">LILA PLAYER JOURNEY VISUALIZATION TOOL</h3>
-            <p class="entry-sub">Python &bull; pandas &bull; FastAPI Backend &bull; React + Vite Frontend</p>
-            <div class="entry-details">
-              <p>
-                An interactive data visualization application built to analyze player behavior, game event data, and playtest paths. Processes structured gameplay datasets using Python &amp; pandas, powered by a high-performance FastAPI REST backend and a responsive React/Vite interface for tracking player matches and journey choke-points.
-              </p>
-              <div class="entry-links">
-                <a href="https://github.com/mubiii2/lila-player-tool/tree/master" target="_blank" rel="noopener" class="link-btn">
-                  <span>VIEW ON GITHUB</span>
-                  <span class="arrow" aria-hidden="true">&rarr;</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-        </div>
+      <div class="screen-meta-badge">
+        <span class="status-indicator"></span>
+        <span>SHADERS // REAL-TIME RENDERING // TOOLS</span>
       </div>
-    </article>
+    </div>
 
-  </div><!-- /panel-stage -->
+    <!-- Spacious Scrollable Screen Content Container -->
+    <div class="screen-content-wrapper techart-content-wrapper">
+      <div class="screen-techart-panel">
+
+        <!-- Top Title Header matching About/Contact style -->
+        <div class="techart-top-header">
+          <div class="contact-title-group">
+            <h1 id="techart-screen-title" class="contact-title-text">T E C H &nbsp; A R T &nbsp; &amp; &nbsp; T O O L S</h1>
+            <div class="contact-title-line" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <!-- Tech Art Flow Container (Clean blank canvas ready for new content) -->
+        <div class="techart-flow">
+          <!-- Content to be added here -->
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- =========================================================================
        DEDICATED FULL SCREEN CONTACT VIEW (Clean full-page transition)
        ========================================================================= -->
-  <section class="contact-screen-view" id="contactScreenView" aria-label="Contact Section" hidden>
+  <section class="screen-view contact-screen-view" id="contactScreenView" aria-label="Contact Section" hidden>
     
     <!-- Top Bar with Back Navigation -->
     <div class="screen-topbar">
@@ -359,7 +1269,7 @@
     </div>
 
     <!-- Centered Dedicated Screen Content -->
-    <div class="screen-content-wrapper">
+    <div class="screen-content-wrapper contact-content-wrapper">
       <div class="screen-contact-panel">
 
         <div class="contact-top-header">

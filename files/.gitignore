@@ -1,0 +1,8 @@
+# GitHub blocks files > 100MB from being pushed
+assets/videos/Campus_99.mp4
+assets/videos/Dr Guruji.mp4
+assets/videos/Maskout.mp4
+
+# Python caches & temp
+__pycache__/
+*.pyc

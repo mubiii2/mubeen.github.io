@@ -9,22 +9,66 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   const hubButtons = document.querySelectorAll('.hub-btn');
-  const panelBackdrop = document.getElementById('panelBackdrop');
-  const modalCards = document.querySelectorAll('.modal-card');
-  const closeButtons = document.querySelectorAll('[data-close]');
   const contactScreenView = document.getElementById('contactScreenView');
   const contactBackBtn = document.getElementById('contactBackBtn');
   const aboutScreenView = document.getElementById('aboutScreenView');
   const aboutBackBtn = document.getElementById('aboutBackBtn');
   const aboutToContactBtn = document.getElementById('aboutToContactBtn');
-  let activePanel = null;
+  const techartScreenView = document.getElementById('techartScreenView');
+  const techartBackBtn = document.getElementById('techartBackBtn');
+  const workScreenView = document.getElementById('workScreenView');
+  const workBackBtn = document.getElementById('workBackBtn');
   let isContactScreenOpen = false;
   let isAboutScreenOpen = false;
+  let isTechartScreenOpen = false;
+  let isWorkScreenOpen = false;
 
-  function openContactScreen() {
-    // If any modal or about screen is open, close it
-    if (activePanel) closePanel();
-    if (isAboutScreenOpen) closeAboutScreen();
+  // ---------------------------------------------------------------------------
+  // CENTRAL ROUTER: Handles Browser Back / Forward & In-Page Navigation
+  // ---------------------------------------------------------------------------
+  function syncRouteFromHash() {
+    const rawHash = window.location.hash.replace('#', '');
+    const [section, subParam] = rawHash.split('/');
+
+    // Handle sections
+    if (section === 'contact') {
+      showContactScreen(false);
+    } else if (section === 'about') {
+      showAboutScreen(false);
+    } else if (section === 'techart') {
+      showTechartScreen(false);
+    } else if (section === 'work') {
+      showWorkScreen(false);
+      if (subParam) {
+        showProjectDetail(subParam, false);
+      } else {
+        closeAllProjectDetails(false);
+      }
+    } else {
+      // Return to Hub (close all open screens)
+      closeAllScreens(false);
+    }
+  }
+
+  function closeAllScreens(updateHistory = true) {
+    if (isContactScreenOpen) closeContactScreen(updateHistory);
+    if (isAboutScreenOpen) closeAboutScreen(updateHistory);
+    if (isTechartScreenOpen) closeTechartScreen(updateHistory);
+    if (isWorkScreenOpen) closeWorkScreen(updateHistory);
+  }
+
+  function navigateTo(hash) {
+    if (window.location.hash !== hash) {
+      window.location.hash = hash;
+    } else {
+      syncRouteFromHash();
+    }
+  }
+
+  function showContactScreen(updateHistory = true) {
+    if (isAboutScreenOpen) closeAboutScreen(false);
+    if (isTechartScreenOpen) closeTechartScreen(false);
+    if (isWorkScreenOpen) closeWorkScreen(false);
 
     if (contactScreenView) {
       contactScreenView.hidden = false;
@@ -34,15 +78,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.body.classList.add('contact-screen-active');
     isContactScreenOpen = true;
-    window.location.hash = 'contact';
+    if (updateHistory) navigateTo('#contact');
   }
 
-  function closeContactScreen() {
+  function closeContactScreen(updateHistory = true) {
     document.body.classList.remove('contact-screen-active');
     isContactScreenOpen = false;
 
-    if (window.location.hash === '#contact') {
-      history.replaceState(null, null, ' ');
+    if (updateHistory && window.location.hash === '#contact') {
+      history.back();
     }
 
     setTimeout(() => {
@@ -52,10 +96,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 380);
   }
 
-  function openAboutScreen() {
-    // If any modal or contact screen is open, close it
-    if (activePanel) closePanel();
-    if (isContactScreenOpen) closeContactScreen();
+  function showAboutScreen(updateHistory = true) {
+    if (isContactScreenOpen) closeContactScreen(false);
+    if (isTechartScreenOpen) closeTechartScreen(false);
+    if (isWorkScreenOpen) closeWorkScreen(false);
 
     if (aboutScreenView) {
       aboutScreenView.hidden = false;
@@ -65,15 +109,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.body.classList.add('about-screen-active');
     isAboutScreenOpen = true;
-    window.location.hash = 'about';
+    if (updateHistory) navigateTo('#about');
   }
 
-  function closeAboutScreen() {
+  function closeAboutScreen(updateHistory = true) {
     document.body.classList.remove('about-screen-active');
     isAboutScreenOpen = false;
 
-    if (window.location.hash === '#about') {
-      history.replaceState(null, null, ' ');
+    if (updateHistory && window.location.hash === '#about') {
+      history.back();
     }
 
     setTimeout(() => {
@@ -83,117 +127,201 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 380);
   }
 
-  function openPanel(panelId) {
-    if (panelId === 'contact') {
-      openContactScreen();
-      return;
+  function showTechartScreen(updateHistory = true) {
+    if (isContactScreenOpen) closeContactScreen(false);
+    if (isAboutScreenOpen) closeAboutScreen(false);
+    if (isWorkScreenOpen) closeWorkScreen(false);
+
+    if (techartScreenView) {
+      techartScreenView.hidden = false;
+      techartScreenView.scrollTop = 0;
+      void techartScreenView.offsetWidth; // Reflow
     }
-    if (panelId === 'about') {
-      openAboutScreen();
-      return;
-    }
 
-    if (isContactScreenOpen) closeContactScreen();
-    if (isAboutScreenOpen) closeAboutScreen();
-
-    const targetCard = document.getElementById(`panel-${panelId}`);
-    if (!targetCard) return;
-
-    // Close any open card
-    modalCards.forEach(card => {
-      card.style.display = 'none';
-      card.classList.remove('is-visible');
-    });
-
-    // Activate backdrop & stage
-    document.body.classList.add('panel-active');
-
-    // Display and animate target card
-    targetCard.style.display = 'flex';
-    void targetCard.offsetWidth; // Force reflow
-    targetCard.classList.add('is-visible');
-
-    activePanel = panelId;
-    window.location.hash = panelId;
+    document.body.classList.add('techart-screen-active');
+    isTechartScreenOpen = true;
+    if (updateHistory) navigateTo('#techart');
   }
 
-  function closePanel() {
-    modalCards.forEach(card => {
-      card.classList.remove('is-visible');
-    });
+  function closeTechartScreen(updateHistory = true) {
+    document.body.classList.remove('techart-screen-active');
+    isTechartScreenOpen = false;
 
-    document.body.classList.remove('panel-active');
+    if (updateHistory && window.location.hash === '#techart') {
+      history.back();
+    }
 
     setTimeout(() => {
-      modalCards.forEach(card => {
-        card.style.display = 'none';
-      });
-      activePanel = null;
-      if (window.location.hash && window.location.hash !== '#contact' && window.location.hash !== '#about') {
-        history.replaceState(null, null, ' ');
+      if (!isTechartScreenOpen && techartScreenView) {
+        techartScreenView.hidden = true;
       }
-    }, 250);
+    }, 380);
   }
+
+  function showWorkScreen(updateHistory = true) {
+    if (isContactScreenOpen) closeContactScreen(false);
+    if (isAboutScreenOpen) closeAboutScreen(false);
+    if (isTechartScreenOpen) closeTechartScreen(false);
+
+    if (workScreenView) {
+      workScreenView.hidden = false;
+      workScreenView.scrollTop = 0;
+      void workScreenView.offsetWidth; // Reflow
+    }
+
+    document.body.classList.add('work-screen-active');
+    isWorkScreenOpen = true;
+    if (updateHistory) navigateTo('#work');
+  }
+
+  function closeWorkScreen(updateHistory = true) {
+    document.body.classList.remove('work-screen-active');
+    isWorkScreenOpen = false;
+
+    closeAllProjectDetails(false);
+
+    if (updateHistory && window.location.hash.startsWith('#work')) {
+      history.back();
+    }
+
+    setTimeout(() => {
+      if (!isWorkScreenOpen && workScreenView) {
+        workScreenView.hidden = true;
+      }
+    }, 380);
+  }
+
+  // ---------------------------------------------------------------------------
+  // WORK & GAMES: GALLERY / PROJECT DETAIL TOGGLER
+  // ---------------------------------------------------------------------------
+  const projectsGalleryGrid = document.getElementById('projectsGalleryGrid');
+  const galleryCards = document.querySelectorAll('.gallery-card[data-project-target]');
+  const detailBackBtns = document.querySelectorAll('[data-back-to-gallery]');
+  const allProjectDetails = document.querySelectorAll('.project-detail-view');
+
+  function showProjectDetail(targetId, updateHistory = true) {
+    const targetDetail = document.getElementById(targetId);
+    if (!targetDetail) return;
+
+    if (projectsGalleryGrid) {
+      projectsGalleryGrid.style.display = 'none';
+    }
+
+    allProjectDetails.forEach(detail => {
+      detail.hidden = true;
+    });
+
+    targetDetail.hidden = false;
+
+    if (updateHistory) {
+      navigateTo(`#work/${targetId}`);
+    }
+
+    // Scroll work container smoothly to top
+    if (workScreenView) {
+      workScreenView.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  function closeAllProjectDetails(updateHistory = true) {
+    allProjectDetails.forEach(detail => {
+      detail.hidden = true;
+      // Pause any active videos inside detail view
+      const videos = detail.querySelectorAll('video');
+      videos.forEach(v => {
+        try { v.pause(); } catch (e) {}
+      });
+      // Reset iframes to stop background video audio
+      const iframes = detail.querySelectorAll('iframe');
+      iframes.forEach(iframe => {
+        try {
+          const src = iframe.getAttribute('src');
+          iframe.setAttribute('src', src);
+        } catch (e) {}
+      });
+    });
+
+    if (projectsGalleryGrid) {
+      projectsGalleryGrid.style.display = 'grid';
+    }
+
+    if (updateHistory && window.location.hash.startsWith('#work/')) {
+      navigateTo('#work');
+    }
+  }
+
+  galleryCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const targetId = card.getAttribute('data-project-target');
+      if (targetId) {
+        showProjectDetail(targetId, true);
+      }
+    });
+  });
+
+  detailBackBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeAllProjectDetails(true);
+      if (workScreenView) {
+        workScreenView.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  });
 
   // Bind Hub Nav Buttons
   hubButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       const panelName = btn.getAttribute('data-panel');
       if (panelName === 'contact') {
-        openContactScreen();
+        showContactScreen(true);
       } else if (panelName === 'about') {
-        openAboutScreen();
-      } else if (panelName) {
-        openPanel(panelName);
+        showAboutScreen(true);
+      } else if (panelName === 'techart') {
+        showTechartScreen(true);
+      } else if (panelName === 'work') {
+        showWorkScreen(true);
       }
     });
   });
 
-  // Bind Close Buttons (X)
-  closeButtons.forEach(btn => {
-    btn.addEventListener('click', closePanel);
-  });
-
   // Bind Screen Back Buttons
   if (contactBackBtn) {
-    contactBackBtn.addEventListener('click', closeContactScreen);
+    contactBackBtn.addEventListener('click', () => closeContactScreen(true));
   }
   if (aboutBackBtn) {
-    aboutBackBtn.addEventListener('click', closeAboutScreen);
+    aboutBackBtn.addEventListener('click', () => closeAboutScreen(true));
+  }
+  if (techartBackBtn) {
+    techartBackBtn.addEventListener('click', () => closeTechartScreen(true));
+  }
+  if (workBackBtn) {
+    workBackBtn.addEventListener('click', () => closeWorkScreen(true));
   }
 
   // Bind cross-link button in About screen to open Contact screen directly
   if (aboutToContactBtn) {
-    aboutToContactBtn.addEventListener('click', openContactScreen);
+    aboutToContactBtn.addEventListener('click', () => showContactScreen(true));
   }
 
-  // Backdrop click closes modal
-  if (panelBackdrop) {
-    panelBackdrop.addEventListener('click', closePanel);
-  }
-
-  // Escape key closes modal or screens
+  // Escape key closes screens or returns to gallery
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      if (isContactScreenOpen) {
-        closeContactScreen();
-      } else if (isAboutScreenOpen) {
-        closeAboutScreen();
-      } else if (activePanel) {
-        closePanel();
+      if (window.location.hash.startsWith('#work/')) {
+        closeAllProjectDetails(true);
+      } else if (isContactScreenOpen || isAboutScreenOpen || isTechartScreenOpen || isWorkScreenOpen) {
+        history.back();
       }
     }
   });
 
-  // Check URL hash on initial load (e.g. #work, #techart, #about, #contact)
-  const initialHash = window.location.hash.replace('#', '');
-  if (initialHash === 'contact') {
-    openContactScreen();
-  } else if (initialHash === 'about') {
-    openAboutScreen();
-  } else if (initialHash && ['work', 'techart'].includes(initialHash)) {
-    openPanel(initialHash);
-  }
+  // Listen for Browser Back & Forward buttons (popstate)
+  window.addEventListener('popstate', () => {
+    syncRouteFromHash();
+  });
+
+  // Sync route on initial page load
+  syncRouteFromHash();
 
   // ---------------------------------------------------------------------------
   // CUSTOM CURSOR CONTROLLER (Smooth lerp + hover expansion)
