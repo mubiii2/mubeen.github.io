@@ -2598,17 +2598,28 @@ body.work-screen-active .work-screen-view {
     padding: 1.5rem 1.5rem;
   }
 
+  .screen-view,
+  .work-screen-view,
+  .techart-screen-view,
   .contact-screen-view,
   .about-screen-view {
     padding: 1.5rem 1.5rem;
   }
 
-  .screen-contact-panel {
-    padding: 2.2rem 2rem;
+  .screen-contact-panel,
+  .screen-about-panel,
+  .screen-techart-panel,
+  .screen-work-panel {
+    padding: 2.2rem 1.8rem;
   }
 
-  .screen-about-panel {
-    padding: 2.2rem 1.8rem;
+  .project-detail-view {
+    padding: 2rem 1.6rem;
+  }
+
+  .projects-gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.4rem;
   }
 
   .focus-grid-modern {
@@ -2649,20 +2660,261 @@ body.work-screen-active .work-screen-view {
 
 @media (max-width: 600px) {
   .app-layout {
-    padding: 1.2rem 1rem;
+    padding: 1rem 0.85rem;
   }
 
+  .screen-view,
+  .work-screen-view,
+  .techart-screen-view,
   .contact-screen-view,
   .about-screen-view {
+    padding: 0.85rem 0.65rem;
+  }
+
+  .screen-contact-panel,
+  .screen-about-panel,
+  .screen-techart-panel,
+  .screen-work-panel {
+    padding: 1.4rem 0.95rem;
+    border-radius: 6px;
+    box-shadow: none;
+  }
+
+  .work-flow,
+  .techart-flow,
+  .about-flow {
+    gap: 2rem;
+  }
+
+  .project-detail-view {
+    padding: 1.2rem 0.85rem;
+    border-radius: 6px;
+  }
+
+  .projects-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    width: 100%;
+  }
+
+  .gallery-card {
+    border-radius: 6px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .card-info-wrap {
+    padding: 1.15rem 1rem 1.3rem;
+  }
+
+  .card-meta-line {
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .card-game-title {
+    font-size: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .card-game-summary {
+    font-size: 0.84rem;
+    line-height: 1.45;
+  }
+
+  .winner-ribbon-badge {
+    top: 10px;
+    right: 10px;
+    font-size: 0.62rem;
+    padding: 0.26rem 0.55rem;
+  }
+
+  .thumb-platform-tag {
+    bottom: 8px;
+    left: 10px;
+    font-size: 0.6rem;
+    padding: 0.2rem 0.45rem;
+  }
+
+  /* Detail view responsive alignment */
+  .detail-nav-bar {
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    align-items: flex-start;
+    padding-bottom: 0.85rem;
+  }
+
+  .detail-back-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.72rem;
+  }
+
+  .detail-winner-pill {
+    font-size: 0.66rem;
+    padding: 0.25rem 0.55rem;
+  }
+
+  .project-card-header {
+    gap: 1rem;
+  }
+
+  .p-title-cluster {
+    gap: 0.6rem;
+  }
+
+  .p-award-badge {
+    font-size: 0.66rem;
+    padding: 0.25rem 0.55rem;
+  }
+
+  .p-game-title {
+    font-size: 1.55rem;
+    line-height: 1.2;
+    word-break: break-word;
+  }
+
+  .p-game-tagline {
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  .p-specs-grid {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+    padding: 0.85rem 1rem;
+  }
+
+  .p-spec-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    padding-bottom: 0.35rem;
+  }
+
+  .p-spec-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .p-spec-item .spec-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+  }
+
+  .p-spec-item .spec-val {
+    font-size: 0.78rem;
+    text-align: right;
+  }
+
+  .project-external-links {
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .p-link-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.65rem 1rem;
+    box-sizing: border-box;
+    font-size: 0.72rem;
+  }
+
+  .video-wrapper iframe.p-video {
+    min-height: 200px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .media-hint-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.64rem;
+  }
+
+  .p-narrative {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .p-responsibilities-grid {
+    gap: 1.2rem;
+  }
+
+  .resp-card {
     padding: 1.2rem 1rem;
   }
 
-  .screen-contact-panel {
-    padding: 1.6rem 1.2rem;
+  .resp-heading {
+    font-size: 0.96rem;
   }
 
-  .screen-about-panel {
-    padding: 1.6rem 1.2rem;
+  .resp-sub {
+    font-size: 0.76rem;
+  }
+
+  .resp-list {
+    padding-left: 1.1rem;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .resp-list li {
+    margin-bottom: 0.55rem;
+  }
+
+  .scenario-item {
+    padding: 1rem 0.85rem;
+  }
+
+  .scen-title {
+    font-size: 0.95rem;
+  }
+
+  .scen-desc {
+    font-size: 0.8rem;
+    line-height: 1.45;
+  }
+
+  .p-footer-banner {
+    padding: 1.1rem 0.95rem;
+    font-size: 0.82rem;
+  }
+
+  .banner-badge {
+    font-size: 0.64rem;
+  }
+
+  .banner-text {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  /* Section top headers */
+  .contact-title-text {
+    font-size: 1.05rem;
+    letter-spacing: 0.16em;
+  }
+
+  .contact-top-header,
+  .work-top-header,
+  .techart-top-header,
+  .about-top-header {
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .screen-topbar {
+    padding: 0.65rem 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .screen-back-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.72rem;
   }
 
   .hero-narrative-card,
@@ -2671,11 +2923,12 @@ body.work-screen-active .work-screen-view {
   .languages-feature-box,
   .target-roles-col,
   .cta-box-glow {
-    padding: 1.4rem 1.2rem;
+    padding: 1.3rem 1rem;
   }
 
   .focus-grid-modern {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .screen-meta-badge {
@@ -2683,11 +2936,22 @@ body.work-screen-active .work-screen-view {
   }
 
   .hub-title {
-    font-size: 2.6rem;
+    font-size: 2.1rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hub-role {
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
   }
 
   .hub-nav {
     grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .hub-btn {
+    padding: 0.9rem 1.1rem;
   }
 
   .hub-footer {
@@ -2695,11 +2959,11 @@ body.work-screen-active .work-screen-view {
   }
 
   .card-header {
-    padding: 1rem 1.2rem;
+    padding: 1rem 1.1rem;
   }
 
   .card-body {
-    padding: 1.5rem 1.2rem;
+    padding: 1.3rem 1.1rem;
   }
 
   .form-row {
@@ -2710,6 +2974,7 @@ body.work-screen-active .work-screen-view {
   .contact-quick-connect {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.5rem;
   }
 
   .header-contacts {
@@ -2728,6 +2993,7 @@ body.work-screen-active .work-screen-view {
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;
+    padding-top: 1rem;
   }
 }
 
