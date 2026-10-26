@@ -1420,16 +1420,35 @@ body.work-screen-active .work-screen-view {
   animation: none;
 }
 
+.winner-ribbon-badge.arcade-badge {
+  border-color: #ff5d73;
+  box-shadow: 0 0 12px rgba(255, 93, 115, 0.35);
+  color: #ff8597;
+  animation: none;
+}
+
 .detail-winner-pill.default-jam-pill {
   color: #70aeff;
   background: rgba(61, 139, 255, 0.1);
   border: 1px solid rgba(61, 139, 255, 0.35);
 }
 
+.detail-winner-pill.arcade-pill {
+  color: #ff8597;
+  background: rgba(255, 93, 115, 0.1);
+  border: 1px solid rgba(255, 93, 115, 0.35);
+}
+
 .p-award-badge.default-jam-badge {
   background: rgba(61, 139, 255, 0.1);
   border: 1px solid rgba(61, 139, 255, 0.35);
   color: #70aeff;
+}
+
+.p-award-badge.arcade-badge {
+  background: rgba(255, 93, 115, 0.1);
+  border: 1px solid rgba(255, 93, 115, 0.35);
+  color: #ff8597;
 }
 
 @keyframes winnerGlowPulse {
@@ -1818,6 +1837,42 @@ body.work-screen-active .work-screen-view {
 
 .p-link-btn.youtube-jam-link svg {
   color: #ff3333;
+}
+
+.p-link-btn.unity-play-link {
+  background: #111317;
+  color: #ffffff;
+  border: 1px solid #2d333b;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.p-link-btn.unity-play-link:hover {
+  background: #1a1e24;
+  border-color: #00e5ff;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.3);
+}
+
+.p-link-btn.unity-play-link svg {
+  color: #00e5ff;
+}
+
+.p-link-btn.unity-play-link .star-rating {
+  background: rgba(0, 229, 255, 0.12);
+  padding: 0.15rem 0.45rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  color: #00e5ff;
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  letter-spacing: 0.04em;
+}
+
+.video-wrapper img.p-video {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  display: block;
 }
 
 .media-hint-bar {

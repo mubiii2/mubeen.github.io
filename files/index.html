@@ -87,7 +87,7 @@
         <nav class="hub-nav" aria-label="Portfolio Hub Navigation">
           <button type="button" class="hub-btn" data-panel="work">
             <span class="btn-text">WORK &amp; GAMES</span>
-            <span class="btn-pill">5 PROJECTS</span>
+            <span class="btn-pill">6 PROJECTS</span>
           </button>
 
           <button type="button" class="hub-btn" data-panel="techart">
@@ -427,6 +427,61 @@
                   <span class="c-chip highlight">Theme: &ldquo;Mask&rdquo;</span>
                   <span class="c-chip">Precision Controls</span>
                   <span class="c-chip">Level &amp; UI Design</span>
+                </div>
+
+                <!-- Open Project CTA button -->
+                <div class="card-action-bar">
+                  <span class="action-btn-text">VIEW FULL PROJECT DETAILS</span>
+                  <span class="action-arrow" aria-hidden="true">&rarr;</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT CARD 6: POP IT! -->
+            <article class="gallery-card" data-project-target="project-pop-it">
+              
+              <!-- Thumbnail & Badges Container -->
+              <div class="card-thumb-wrap">
+                <img src="assets/images/Pop_It.png" alt="POP IT! Game Poster" class="card-thumb-img" onerror="this.src='assets/images/pop-it.png'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};">
+                
+                <!-- Fallback artwork when image isn't loaded yet -->
+                <div class="card-thumb-fallback">
+                  <div class="fallback-glow"></div>
+                  <div class="fallback-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 21v-4"></path><path d="M9 17h6"></path><path d="M9 9a3 3 0 0 1 3-3"></path></svg>
+                  </div>
+                  <span class="fallback-title">POP IT!</span>
+                </div>
+
+                <!-- Arcade Ribbon Badge -->
+                <div class="winner-ribbon-badge arcade-badge">
+                  <span class="trophy-icon">🎈</span>
+                  <span class="ribbon-text">ARCADE PUZZLER</span>
+                </div>
+
+                <!-- Quick Platform Tag -->
+                <div class="thumb-platform-tag">WEBGL / PC / MOBILE &bull; PHYSICS PUZZLE</div>
+              </div>
+
+              <!-- Card Content Block -->
+              <div class="card-info-wrap">
+                <div class="card-meta-line">
+                  <span class="card-engine">UNITY 6 &bull; C# &bull; HLSL</span>
+                  <span class="card-role">LEAD PROGRAMMER &amp; TECH ARTIST</span>
+                </div>
+
+                <h3 class="card-game-title">POP IT!</h3>
+                
+                <p class="card-game-summary">
+                  A juicy, physics-driven arcade puzzle game where players drag-to-slash multi-colored chains and pop falling balloons with tactile soft-body simulation and custom HLSL pseudo-3D lighting shaders.
+                </p>
+
+                <!-- Tags / Tech highlights -->
+                <div class="card-chips">
+                  <span class="c-chip highlight">Unity Play WebGL</span>
+                  <span class="c-chip highlight">HLSL Shader</span>
+                  <span class="c-chip">Spline Slicing</span>
+                  <span class="c-chip">Fair-Play RNG</span>
                 </div>
 
                 <!-- Open Project CTA button -->
@@ -1194,6 +1249,162 @@
               <div class="banner-badge">OUTCOME &amp; IMPACT</div>
               <p class="banner-text">
                 Developed for the <strong>Global Game Jam (GGJ)</strong> under the theme <em>&ldquo;Mask&rdquo;</em>. Proved the ability to wear multiple hats—gameplay programming, level design, UI implementation, and technical environment setup—under strict game-jam deadlines to deliver a polished, fully playable precision 2D experience.
+              </p>
+            </div>
+
+          </article>
+
+
+          <!-- 06: DEDICATED FULL PROJECT DETAIL VIEW: POP IT! -->
+          <article class="project-detail-view" id="project-pop-it" hidden>
+
+            <!-- Back to Projects Gallery Navigation -->
+            <div class="detail-nav-bar">
+              <button type="button" class="detail-back-btn" data-back-to-gallery aria-label="Back to all projects">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>ALL PROJECTS</span>
+              </button>
+
+              <div class="detail-winner-pill arcade-pill">
+                🎈 PHYSICS ARCADE &bull; WEBGL &amp; MOBILE READY
+              </div>
+            </div>
+            
+            <!-- Project Header Bar -->
+            <div class="project-card-header">
+              <div class="p-title-cluster">
+                <div class="p-award-badge arcade-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 21v-4"></path><path d="M9 17h6"></path><path d="M9 9a3 3 0 0 1 3-3"></path></svg>
+                  <span>PHYSICS-BASED ARCADE PUZZLE &bull; UNITY PLAY</span>
+                </div>
+                <h2 class="p-game-title">POP IT!</h2>
+                <p class="p-game-tagline">&ldquo;A juicy, physics-driven arcade puzzle game combining tactile soft-body balloon simulation, custom HLSL lighting shaders, and drag-to-slash combo splines.&rdquo;</p>
+              </div>
+
+              <!-- Quick Specs Chips -->
+              <div class="p-specs-grid">
+                <div class="p-spec-item">
+                  <span class="spec-label">ROLES</span>
+                  <span class="spec-val highlight">Lead Programmer &amp; Tech Artist</span>
+                </div>
+                <div class="p-spec-item">
+                  <span class="spec-label">PLATFORMS</span>
+                  <span class="spec-val highlight">WebGL &bull; PC &bull; Mobile</span>
+                </div>
+                <div class="p-spec-item">
+                  <span class="spec-label">ENGINE &amp; LANG</span>
+                  <span class="spec-val">Unity (C#) &bull; URP</span>
+                </div>
+                <div class="p-spec-item">
+                  <span class="spec-label">GRAPHICS TECH</span>
+                  <span class="spec-val">Custom HLSL &bull; Catmull-Rom</span>
+                </div>
+              </div>
+
+              <!-- External Links Bar -->
+              <div class="project-external-links">
+                <a href="https://play.unity.com/en/games/9333fa06-8dc5-41ad-9a62-15013bda3bc1/popit" target="_blank" rel="noopener noreferrer" class="p-link-btn unity-play-link">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M21.6 8.2l-4.8-2.8V3.6L12 .6 7.2 3.6v1.8L2.4 8.2v7.6l4.8 2.8v1.8l4.8 3 4.8-3v-1.8l4.8-2.8V8.2zm-9.6 12l-2.4-1.5v-3.3l2.4 1.4 2.4-1.4v3.3l-2.4 1.5zm-5.4-4.8l-2.4-1.4v-4l2.4 1.4v4zm1.2-5.9L5.4 8.1 12 4.2l6.6 3.9-2.4 1.4-4.2-2.5-4.2 2.5zm11.4 4.5l-2.4 1.4v-4l2.4-1.4v4z"/>
+                  </svg>
+                  <span>PLAY ON UNITY PLAY (WEBGL)</span>
+                  <span class="star-rating">PLAYABLE BUILD</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Media Showcase Container -->
+            <div class="p-media-showcase">
+              <div class="video-wrapper">
+                <img src="assets/images/Pop_It.png" alt="POP IT! Gameplay Interface &amp; Slash Spline Mechanics" class="p-video" onerror="this.src='assets/images/pop-it.png';">
+                <div class="media-hint-bar">
+                  <span>PHYSICS-BASED ARCADE PUZZLER // PLAYFIELD &amp; SPLINE CHAIN SLICING</span>
+                  <span class="time-tag">UNITY PLAY WEBGL BUILD</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Overview & Hook Narrative -->
+            <div class="p-section-block">
+              <div class="block-tag">01 // PROJECT OVERVIEW</div>
+              <h3 class="block-title">Tactile 2D Physics, Drag-to-Slash Spline Chains &amp; Juicy Arcade Feedback</h3>
+              <p class="p-narrative">
+                <strong>POP IT!</strong> is a juicy, physics-driven arcade puzzle game where players pop falling balloons and drag-to-slash multi-colored chains before the playfield overflows. Combining tactile 2D physics with a custom pseudo-3D lighting shader, adaptive difficulty pacing, and an exponential multiplier combo system, the game delivers an addictive, high-energy arcade experience engineered for seamless cross-platform play across WebGL, PC, and mobile touch screens.
+              </p>
+            </div>
+
+            <!-- Dual Responsibilities Matrix: Technical Art & Shaders vs. Gameplay & Systems Programming -->
+            <div class="p-responsibilities-grid">
+              
+              <!-- Technical Artist & Shaders Card -->
+              <div class="resp-card">
+                <div class="resp-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </div>
+                <h4 class="resp-heading">Technical Art &amp; Shader Engineering</h4>
+                <p class="resp-sub">Custom HLSL lighting, procedural normal reconstruction &amp; visual juice</p>
+                <ul class="resp-list">
+                  <li><strong>Custom Pseudo-3D Lighting Shader (<code>JuicyBalloonShader</code>):</strong> Wrote a handcrafted ShaderLab/HLSL shader that reconstructs spherical normal vectors mathematically across flat 2D sprite UV coordinates, granting flat balloon textures a tactile, high-gloss 3D presence.</li>
+                  <li><strong>Dual Specular Glints &amp; Translucency:</strong> Simulated direct sun glints alongside a secondary ambient fill light, paired with subsurface rubber translucency for a candy/jelly latex appearance.</li>
+                  <li><strong>Fresnel Rim Sheen &amp; Ground Bounce:</strong> Engineered subtle Fresnel edge glow and bottom meadow reflections, naturally grounding floating balloons inside the vibrant cartoon container.</li>
+                  <li><strong>Dynamic Selection Shimmer:</strong> Programmed real-time parameter modulation in the shader to produce a luminous pulsing highlight whenever a balloon is linked into an active slash chain.</li>
+                  <li><strong>Catmull-Rom Spline Gesture Trail:</strong> Rendered real-time slicing paths via an adaptive <code>LineRenderer</code> utilizing smoothed Catmull-Rom curve interpolation, neon glow gradients, and particle sparks.</li>
+                </ul>
+              </div>
+
+              <!-- Gameplay Programming & Systems Card -->
+              <div class="resp-card">
+                <div class="resp-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <h4 class="resp-heading">Gameplay Programming &amp; Systems Architecture</h4>
+                <p class="resp-sub">Decoupled physics hierarchy, fair-play algorithms &amp; progression loop</p>
+                <ul class="resp-list">
+                  <li><strong>Decoupled Visual vs. Physics Architecture:</strong> Solved physics collider micro-jitter and explosion artifacts by isolating <code>Rigidbody2D</code> and <code>CircleCollider2D</code> strictly on the root GameObject, while squash-and-stretch tweening scales a dedicated child <code>VisualRoot</code>.</li>
+                  <li><strong>Dual Input System (Tap-to-Pop vs. Drag-to-Slash):</strong> Engineered an ultra-responsive input handler supporting instantaneous single-tap pops alongside multi-color drag gestures with unified mouse and touch coordinate translation.</li>
+                  <li><strong>Fisher-Yates Shuffle-Bag Fair-Play RNG:</strong> Replaced raw random generation with a card-deck shuffle-bag algorithm, guaranteeing balanced color distribution and preventing impossible color droughts.</li>
+                  <li><strong>Quadratic Chain Scoring &amp; Exponential Multipliers:</strong> Programmed combo math rewarding ambitious chains (<code>Count &times; 20 &times; Count &times; Multiplier</code>) with cascading Golden Star multipliers (2<sup>n</sup>) and a 10-point Fever Rush mode.</li>
+                  <li><strong>Dynamic Difficulty Pacing &amp; Danger State Machine:</strong> Scripted survival-time escalation from single drops to 4-balloon hyper-bursts, guarded by a danger-line threshold alarm and countdown state machine.</li>
+                </ul>
+              </div>
+
+            </div>
+
+            <!-- Custom Editor Tooling & Engine Architecture Breakdown Grid -->
+            <div class="p-section-block">
+              <div class="block-tag">02 // ENGINE ARCHITECTURE &amp; CROSS-PLATFORM SYSTEMS</div>
+              <h3 class="block-title">Engine Architecture &amp; Cross-Platform Pipelines</h3>
+              <div class="scenarios-grid">
+                
+                <div class="scenario-item">
+                  <span class="scen-num">01</span>
+                  <div class="scen-title">Dynamic Multi-Aspect Camera Fitter (<code>BackgroundFitter</code>)</div>
+                  <div class="scen-desc">Dynamically scales the orthographic camera size and background aspect ratios so artwork fills mobile portrait (9:16), iPad (4:3), and desktop (16:9) screens without black bars or letterboxing.</div>
+                </div>
+
+                <div class="scenario-item">
+                  <span class="scen-num">02</span>
+                  <div class="scen-title">Procedural Semitone Pitch Modulator (<code>SoundManager</code>)</div>
+                  <div class="scen-desc">Dynamic audio engine that steps pitch upward by musical semitones for each consecutive pop in a slash chain, delivering immediate acoustic satisfaction during long combos.</div>
+                </div>
+
+                <div class="scenario-item">
+                  <span class="scen-num">03</span>
+                  <div class="scen-title">Calibrated Touch &amp; Custom Cursor Calibration</div>
+                  <div class="scen-desc">Desktop integration utilizing custom pointing fingertip hardware cursors with calibrated click hotspots (222, 31), maintaining 1:1 parity with tactile mobile touch gestures.</div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Takeaway & Impact Banner -->
+            <div class="p-footer-banner">
+              <div class="banner-badge">OUTCOME &amp; IMPACT</div>
+              <p class="banner-text">
+                Published on <strong>Unity Play</strong> as an optimized, responsive WebGL build. Demonstrated end-to-end capabilities spanning custom HLSL lighting shaders on 2D sprites, mathematically sound decoupled physics architectures, Fair-Play RNG generation, and responsive cross-platform UI systems.
               </p>
             </div>
 
