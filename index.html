@@ -1306,23 +1306,53 @@
 
               <!-- External Links Bar -->
               <div class="project-external-links">
+                <button type="button" class="p-link-btn primary-jam-link" id="triggerPopitPlayBtn">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+                  <span>PLAY IN BROWSER NOW</span>
+                  <span class="star-rating">LIVE WEBGL</span>
+                </button>
                 <a href="https://play.unity.com/en/games/9333fa06-8dc5-41ad-9a62-15013bda3bc1/popit" target="_blank" rel="noopener noreferrer" class="p-link-btn unity-play-link">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M21.6 8.2l-4.8-2.8V3.6L12 .6 7.2 3.6v1.8L2.4 8.2v7.6l4.8 2.8v1.8l4.8 3 4.8-3v-1.8l4.8-2.8V8.2zm-9.6 12l-2.4-1.5v-3.3l2.4 1.4 2.4-1.4v3.3l-2.4 1.5zm-5.4-4.8l-2.4-1.4v-4l2.4 1.4v4zm1.2-5.9L5.4 8.1 12 4.2l6.6 3.9-2.4 1.4-4.2-2.5-4.2 2.5zm11.4 4.5l-2.4 1.4v-4l2.4-1.4v4z"/>
                   </svg>
-                  <span>PLAY ON UNITY PLAY (WEBGL)</span>
-                  <span class="star-rating">PLAYABLE BUILD</span>
+                  <span>OPEN ON UNITY PLAY</span>
+                  <span class="star-rating">OFFICIAL BUILD</span>
                 </a>
               </div>
             </div>
 
-            <!-- Media Showcase Container -->
+            <!-- Media Showcase Container (Interactive In-Portfolio WebGL Player) -->
             <div class="p-media-showcase">
-              <div class="video-wrapper">
-                <img src="assets/images/Pop_It.png" alt="POP IT! Gameplay Interface &amp; Slash Spline Mechanics" class="p-video" onerror="this.src='assets/images/pop-it.png';">
+              <div class="video-wrapper popit-interactive-wrapper" id="popitMediaWrapper">
+                
+                <!-- Static Poster / Preview Launcher State -->
+                <div class="webgl-launcher-poster" id="popitLauncherPoster">
+                  <img src="assets/images/Pop_It.png" alt="POP IT! Gameplay Interface &amp; Slash Spline Mechanics" class="p-video" onerror="this.src='assets/images/pop-it.png';">
+                  <div class="webgl-play-overlay">
+                    <button type="button" class="webgl-launch-btn" id="launchPopitBtn" aria-label="Play POP IT! right inside portfolio">
+                      <span class="launch-play-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+                      </span>
+                      <span class="launch-label-group">
+                        <span class="launch-title">PLAY POP IT! DIRECTLY HERE</span>
+                        <span class="launch-sub">CLICK TO LAUNCH WEBGL &bull; TOUCH &amp; MOUSE SUPPORTED</span>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Live Embedded WebGL Game Instance -->
+                <div class="webgl-frame-container" id="popitFrameContainer" hidden>
+                  <iframe class="p-video webgl-game-frame" id="popitGameFrame" title="POP IT! WebGL Game Player" allow="autoplay; fullscreen; gamepad; focus-without-user-activation" allowfullscreen></iframe>
+                </div>
+
                 <div class="media-hint-bar">
-                  <span>PHYSICS-BASED ARCADE PUZZLER // PLAYFIELD &amp; SPLINE CHAIN SLICING</span>
-                  <span class="time-tag">UNITY PLAY WEBGL BUILD</span>
+                  <span id="popitStatusHint">PHYSICS-BASED ARCADE PUZZLER // LIVE WEBGL BUILD</span>
+                  <div class="media-hint-actions">
+                    <button type="button" class="mini-hint-btn" id="reloadPopitBtn" style="display:none;">RESTART GAME</button>
+                    <button type="button" class="mini-hint-btn" id="closePopitBtn" style="display:none;">CLOSE PLAYER</button>
+                    <span class="time-tag">WEBGL READY</span>
+                  </div>
                 </div>
               </div>
             </div>

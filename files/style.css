@@ -1875,6 +1875,155 @@ body.work-screen-active .work-screen-view {
   display: block;
 }
 
+/* Interactive In-Portfolio WebGL Player */
+.popit-interactive-wrapper {
+  position: relative;
+  background: #0a0b0d;
+}
+
+.webgl-launcher-poster {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.webgl-play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 7, 10, 0.42);
+  backdrop-filter: blur(2px);
+  transition: all 0.25s ease;
+  padding: 1rem;
+}
+
+.webgl-launcher-poster:hover .webgl-play-overlay {
+  background: rgba(5, 7, 10, 0.28);
+}
+
+.webgl-launch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.1rem;
+  background: rgba(14, 17, 24, 0.94);
+  border: 1.5px solid #ff5d73;
+  padding: 1rem 1.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+  color: #ffffff;
+  box-shadow: 0 0 26px rgba(255, 93, 115, 0.45), 0 8px 32px rgba(0, 0, 0, 0.75);
+  transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.webgl-launch-btn:hover {
+  transform: scale(1.04) translateY(-2px);
+  background: #ff5d73;
+  color: #ffffff;
+  box-shadow: 0 0 38px rgba(255, 93, 115, 0.75), 0 12px 36px rgba(0, 0, 0, 0.85);
+}
+
+.launch-play-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #ff5d73;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+  transition: all 0.22s;
+  box-shadow: 0 0 14px rgba(255, 93, 115, 0.6);
+}
+
+.webgl-launch-btn:hover .launch-play-icon {
+  background: #ffffff;
+  color: #ff5d73;
+  transform: scale(1.08);
+}
+
+.launch-label-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.launch-title {
+  font-size: 0.96rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+}
+
+.launch-sub {
+  font-size: 0.72rem;
+  opacity: 0.88;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  color: #e2e8f0;
+}
+
+.webgl-frame-container {
+  width: 100%;
+}
+
+.webgl-frame-container iframe.webgl-game-frame {
+  width: 100%;
+  height: 560px;
+  max-height: 85vh;
+  border: none;
+  display: block;
+  background: #0a0b0d;
+}
+
+.media-hint-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.mini-hint-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #f1f3f5;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: all 0.2s;
+}
+
+.mini-hint-btn:hover {
+  background: #ff5d73;
+  border-color: #ff5d73;
+  color: #ffffff;
+}
+
+@media (max-width: 650px) {
+  .webgl-launch-btn {
+    padding: 0.75rem 1.2rem;
+    gap: 0.75rem;
+  }
+  .launch-play-icon {
+    width: 38px;
+    height: 38px;
+  }
+  .launch-title {
+    font-size: 0.82rem;
+  }
+  .launch-sub {
+    font-size: 0.65rem;
+  }
+  .webgl-frame-container iframe.webgl-game-frame {
+    height: 440px;
+  }
+}
+
 .media-hint-bar {
   display: flex;
   justify-content: space-between;

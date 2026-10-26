@@ -265,8 +265,22 @@ document.addEventListener('DOMContentLoaded', () => {
       const iframes = detail.querySelectorAll('iframe');
       iframes.forEach(iframe => {
         try {
-          const src = iframe.getAttribute('src');
-          iframe.setAttribute('src', src);
+          if (iframe.id === 'popitGameFrame') {
+            iframe.src = '';
+            const poster = document.getElementById('popitLauncherPoster');
+            const frameContainer = document.getElementById('popitFrameContainer');
+            const reloadBtn = document.getElementById('reloadPopitBtn');
+            const closeBtn = document.getElementById('closePopitBtn');
+            const statusHint = document.getElementById('popitStatusHint');
+            if (poster) poster.hidden = false;
+            if (frameContainer) frameContainer.hidden = true;
+            if (reloadBtn) reloadBtn.style.display = 'none';
+            if (closeBtn) closeBtn.style.display = 'none';
+            if (statusHint) statusHint.textContent = 'PHYSICS-BASED ARCADE PUZZLER // LIVE WEBGL BUILD';
+          } else {
+            const src = iframe.getAttribute('src');
+            iframe.setAttribute('src', src);
+          }
         } catch (e) {}
       });
     });
@@ -298,6 +312,52 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // ---------------------------------------------------------------------------
+  // POP IT! IN-PORTFOLIO WEBGL LAUNCHER
+  // ---------------------------------------------------------------------------
+  const launchPopitBtn = document.getElementById('launchPopitBtn');
+  const triggerPopitPlayBtn = document.getElementById('triggerPopitPlayBtn');
+  const popitLauncherPoster = document.getElementById('popitLauncherPoster');
+  const popitFrameContainer = document.getElementById('popitFrameContainer');
+  const popitGameFrame = document.getElementById('popitGameFrame');
+  const reloadPopitBtn = document.getElementById('reloadPopitBtn');
+  const closePopitBtn = document.getElementById('closePopitBtn');
+  const popitStatusHint = document.getElementById('popitStatusHint');
+
+  function startPopitGame() {
+    if (popitGameFrame && (!popitGameFrame.src || !popitGameFrame.src.includes('games/popit/'))) {
+      popitGameFrame.src = 'games/popit/index.html';
+    }
+    if (popitLauncherPoster) popitLauncherPoster.hidden = true;
+    if (popitFrameContainer) popitFrameContainer.hidden = false;
+    if (reloadPopitBtn) reloadPopitBtn.style.display = 'inline-block';
+    if (closePopitBtn) closePopitBtn.style.display = 'inline-block';
+    if (popitStatusHint) popitStatusHint.textContent = 'POP IT! LIVE WEBGL INSTANCE // INTERACT VIA MOUSE OR TOUCH';
+
+    const mediaWrapper = document.getElementById('popitMediaWrapper');
+    if (mediaWrapper) {
+      mediaWrapper.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  function stopPopitGame() {
+    if (popitGameFrame) popitGameFrame.src = '';
+    if (popitLauncherPoster) popitLauncherPoster.hidden = false;
+    if (popitFrameContainer) popitFrameContainer.hidden = true;
+    if (reloadPopitBtn) reloadPopitBtn.style.display = 'none';
+    if (closePopitBtn) closePopitBtn.style.display = 'none';
+    if (popitStatusHint) popitStatusHint.textContent = 'PHYSICS-BASED ARCADE PUZZLER // LIVE WEBGL BUILD';
+  }
+
+  if (launchPopitBtn) launchPopitBtn.addEventListener('click', startPopitGame);
+  if (triggerPopitPlayBtn) triggerPopitPlayBtn.addEventListener('click', startPopitGame);
+  if (reloadPopitBtn) {
+    reloadPopitBtn.addEventListener('click', () => {
+      if (popitGameFrame) popitGameFrame.src = 'games/popit/index.html';
+    });
+  }
+  if (closePopitBtn) closePopitBtn.addEventListener('click', stopPopitGame);
 
   // Bind Hub Nav Buttons
   hubButtons.forEach(btn => {
