@@ -50,11 +50,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function closeAllScreens(updateHistory = true) {
-    if (isContactScreenOpen) closeContactScreen(updateHistory);
-    if (isAboutScreenOpen) closeAboutScreen(updateHistory);
-    if (isTechartScreenOpen) closeTechartScreen(updateHistory);
-    if (isWorkScreenOpen) closeWorkScreen(updateHistory);
+  function returnToHub() {
+    closeAllScreens(false);
+    if (window.location.hash && window.location.hash !== '#') {
+      try {
+        history.pushState(null, '', window.location.pathname + window.location.search);
+      } catch (e) {
+        window.location.hash = '';
+      }
+    }
+  }
+
+  function closeAllScreens(updateHistory = false) {
+    document.body.classList.remove('contact-screen-active', 'about-screen-active', 'techart-screen-active', 'work-screen-active');
+    isContactScreenOpen = false;
+    isAboutScreenOpen = false;
+    isTechartScreenOpen = false;
+    isWorkScreenOpen = false;
+
+    closeAllProjectDetails(false);
+
+    if (updateHistory) {
+      returnToHub();
+      return;
+    }
+
+    setTimeout(() => {
+      if (!isContactScreenOpen && contactScreenView) contactScreenView.hidden = true;
+      if (!isAboutScreenOpen && aboutScreenView) aboutScreenView.hidden = true;
+      if (!isTechartScreenOpen && techartScreenView) techartScreenView.hidden = true;
+      if (!isWorkScreenOpen && workScreenView) workScreenView.hidden = true;
+    }, 380);
   }
 
   function navigateTo(hash) {
@@ -85,8 +111,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.remove('contact-screen-active');
     isContactScreenOpen = false;
 
-    if (updateHistory && window.location.hash === '#contact') {
-      history.back();
+    if (updateHistory) {
+      returnToHub();
+      return;
     }
 
     setTimeout(() => {
@@ -116,8 +143,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.remove('about-screen-active');
     isAboutScreenOpen = false;
 
-    if (updateHistory && window.location.hash === '#about') {
-      history.back();
+    if (updateHistory) {
+      returnToHub();
+      return;
     }
 
     setTimeout(() => {
@@ -147,8 +175,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.remove('techart-screen-active');
     isTechartScreenOpen = false;
 
-    if (updateHistory && window.location.hash === '#techart') {
-      history.back();
+    if (updateHistory) {
+      returnToHub();
+      return;
     }
 
     setTimeout(() => {
@@ -180,8 +209,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     closeAllProjectDetails(false);
 
-    if (updateHistory && window.location.hash.startsWith('#work')) {
-      history.back();
+    if (updateHistory) {
+      returnToHub();
+      return;
     }
 
     setTimeout(() => {
@@ -310,7 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.location.hash.startsWith('#work/')) {
         closeAllProjectDetails(true);
       } else if (isContactScreenOpen || isAboutScreenOpen || isTechartScreenOpen || isWorkScreenOpen) {
-        history.back();
+        returnToHub();
       }
     }
   });
