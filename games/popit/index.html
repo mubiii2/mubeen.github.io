@@ -80,6 +80,15 @@
         border-radius: 999px;
         transition: width 0.15s ease;
       }
+      .loading-subnote {
+        font-size: 0.68rem;
+        color: #94a3b8;
+        text-align: center;
+        margin-top: 10px;
+        line-height: 1.4;
+        max-width: 260px;
+        letter-spacing: 0.02em;
+      }
       #fullscreen-btn {
         position: absolute;
         bottom: 12px;
@@ -111,10 +120,11 @@
       <canvas id="unity-canvas" tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div class="loading-spinner"></div>
-        <div class="loading-text" id="loadingText">LOADING POP IT! (0%)</div>
+        <div class="loading-text" id="loadingText">DOWNLOADING GAME (0%)</div>
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
         </div>
+        <div class="loading-subnote">First load downloads ~94MB from GitHub Pages.<br>Please allow 20–45s on standard Wi-Fi/4G.</div>
       </div>
       <button type="button" id="fullscreen-btn" title="Toggle Fullscreen">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
@@ -149,14 +159,14 @@
         createUnityInstance(canvas, config, (progress) => {
           var pct = Math.round(100 * progress);
           progressBarFull.style.width = pct + "%";
-          loadingText.textContent = "LOADING POP IT! (" + pct + "%)";
+          loadingText.textContent = "DOWNLOADING GAME (" + pct + "%)";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
           fullscreenBtn.onclick = () => {
             unityInstance.SetFullscreen(1);
           };
         }).catch((message) => {
-          loadingText.textContent = "ERROR LOADING GAME";
+          loadingText.textContent = "ERROR INITIALIZING WEBGL";
           console.error(message);
         });
       };
